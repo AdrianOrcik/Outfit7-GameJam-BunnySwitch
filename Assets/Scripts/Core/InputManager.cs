@@ -1,27 +1,17 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class InputManager : MainBehaviour
 {
+    public Action OnSwipeUp;
+    public Action OnSwipeDown;
+    public Action OnSwipe;
+
     private Vector3 firstPosition;
     private Vector3 lastPosition;
     private float dragDistance;
-
-    public bool IsSwipe()
-    {
-        return IsSwipeUp() || IsSwipeDown();
-    }
-
-    public bool IsSwipeUp()
-    {
-        return lastPosition.y > firstPosition.y;
-    }
-
-    public bool IsSwipeDown()
-    {
-        return lastPosition.y < firstPosition.y;
-    }
 
     private void Start()
     {
@@ -50,17 +40,21 @@ public class InputManager : MainBehaviour
                 if (lastPosition.y > firstPosition.y)
                 {
                     //Up swipe
-                    Debug.Log("Up Swipe");
+                    //Debug.Log("Up Swipe");
+                    OnSwipeUp?.Invoke();
                 }
                 else
                 {
                     //Down swipe
-                    Debug.Log("Down Swipe");
+                    //Debug.Log("Down Swipe");
+                    OnSwipeDown?.Invoke();
                 }
+
+                OnSwipe?.Invoke();
             }
             else
             {
-                Debug.Log("Tap");
+                //Debug.Log("Tap");
             }
 
             OnResetPosition();

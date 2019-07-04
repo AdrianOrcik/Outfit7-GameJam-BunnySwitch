@@ -10,6 +10,7 @@ public class MainBehaviour : MonoBehaviour
     public EventManager EventManager => GetAssignedClass<EventManager>();
     public CameraBehaviour CameraManager => GetAssignedClass<CameraBehaviour>();
     public InputManager InputManager => GetAssignedClass<InputManager>();
+    public LayerManager LayerManager => GetAssignedClass<LayerManager>();
 
     void Awake()
     {

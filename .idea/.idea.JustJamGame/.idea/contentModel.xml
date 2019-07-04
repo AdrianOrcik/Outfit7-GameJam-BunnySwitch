@@ -26,12 +26,16 @@
         <e p="Scripts" t="Include">
           <e p="Core" t="Include">
             <e p="CameraBehaviour.cs" t="Include" />
+            <e p="Constants.cs" t="Include" />
             <e p="EventManager.cs" t="Include" />
             <e p="GameManager.cs" t="Include" />
             <e p="InputManager.cs" t="Include" />
             <e p="MainBehaviour.cs" t="Include" />
             <e p="MainModel.cs" t="Include" />
           </e>
+          <e p="Layer.cs" t="Include" />
+          <e p="LayerManager.cs" t="Include" />
+          <e p="Tile.cs" t="Include" />
         </e>
       </e>
       <e p="JustJamGame.sln" t="IncludeFlat" />
