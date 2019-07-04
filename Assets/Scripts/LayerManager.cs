@@ -62,9 +62,6 @@ public class LayerManager : MainBehaviour
 
     public void UpDownTransition(Layer toDeactive, Layer toActive)
     {
-//        Vector3 toDeactiveVector = new Vector3(Constants.DEACTIVE_LAYER_ALPHA, Constants.DEACTIVE_LAYER_ALPHA);
-//        Vector3 toActiveVector = new Vector3(Constants.ACTIVE_LAYER_OFFSET, Constants.ACTIVE_LAYER_OFFSET);
-
         Vector3 toDown = new Vector3(Constants.DEACTIVE_LAYER_ALPHA, -2);
         Vector3 toUp = new Vector3(0, 0);
         Vector3 toDeactiveVector = new Vector3(Constants.DEACTIVE_LAYER_OFFSET, Constants.DEACTIVE_LAYER_OFFSET);
@@ -76,8 +73,5 @@ public class LayerManager : MainBehaviour
             .SetEase(Ease.Linear));
         mySequence.Append(toDeactive.transform.DOMove(toDeactiveVector, Constants.LAYER_MOVE_DURATION)
             .SetEase(Ease.Linear));
-
-//        toDeactive.transform.DOMove(toDeactiveVector, Constants.LAYER_MOVE_DURATION).SetEase(Ease.InCubic);
-//        toActive.transform.DOMove(toActiveVector, Constants.LAYER_MOVE_DURATION).SetEase(Ease.InCubic);
     }
 }

@@ -14,4 +14,7 @@ public static class Constants
 
     public static float SPRITE_FADE_OUT_TIME = 0.5f;
     public static float SPRITE_FADE_IN_TIME = 0.1f;
+
+    public static int DEACTIVE_SORTING_LAYER = 10;
+    public static int ACTIVE_SORTING_LAYER = 15;
 }

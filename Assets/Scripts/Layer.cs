@@ -5,21 +5,21 @@ using UnityEngine;
 public class Layer : MainBehaviour
 {
     public bool IsActive { get; set; }
-    public List<Tile> Tiles = new List<Tile>();
+    public List<Interactable> Interactables = new List<Interactable>();
 
     void Start()
     {
         foreach (Transform tile in transform)
         {
-            Tiles.Add(tile.GetComponent<Tile>());
+            Interactables.Add(tile.GetComponent<Interactable>());
         }
     }
 
     public void SetTransparent(bool toDeactive)
     {
-        foreach (Tile tile in Tiles)
+        foreach (Interactable interactable in Interactables)
         {
-            tile.SetTransparent(toDeactive);
+            interactable.SetTransparent(toDeactive);
         }
     }
 }
