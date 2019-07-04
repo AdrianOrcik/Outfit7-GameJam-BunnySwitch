@@ -1,5 +1,4 @@
-﻿
-using UnityEngine;
+﻿using UnityEngine;
 
 public class MainBehaviour : MonoBehaviour
 {
@@ -10,7 +9,7 @@ public class MainBehaviour : MonoBehaviour
     //instance per scene
     public EventManager EventManager => GetAssignedClass<EventManager>();
     public CameraBehaviour CameraManager => GetAssignedClass<CameraBehaviour>();
-
+    public InputManager InputManager => GetAssignedClass<InputManager>();
 
     void Awake()
     {

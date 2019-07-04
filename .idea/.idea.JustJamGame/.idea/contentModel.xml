@@ -27,10 +27,8 @@
           <e p="Core" t="Include">
             <e p="CameraBehaviour.cs" t="Include" />
             <e p="EventManager.cs" t="Include" />
-            <e p="GameDataLoader.cs" t="Include" />
             <e p="GameManager.cs" t="Include" />
-            <e p="LoaderBehaviour.cs" t="Include" />
-            <e p="LoadSceneManager.cs" t="Include" />
+            <e p="InputManager.cs" t="Include" />
             <e p="MainBehaviour.cs" t="Include" />
             <e p="MainModel.cs" t="Include" />
           </e>
