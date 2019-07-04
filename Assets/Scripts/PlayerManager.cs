@@ -25,6 +25,6 @@ public class PlayerManager : MonoBehaviour
     
     public void JumpDown()
     {
-        player.transform.position = new Vector2(player.transform.position.x, 1);
+        player.transform.position = new Vector2(player.transform.position.x, player.transform.position.y -1);
     }
 }

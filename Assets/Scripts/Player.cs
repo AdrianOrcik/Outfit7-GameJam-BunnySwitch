@@ -4,30 +4,44 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    
+    private PlayerManager playerManager;
     RaycastHit hit;
+    
+    void Start()
+    {
+        playerManager = GameObject.Find("PlayerManager").GetComponent<PlayerManager>();
+    }
 
     void Update()
     {
         Vector2 right = transform.TransformDirection(Vector2.right) * 0.8f;
         Debug.DrawRay (transform.position, right, Color.red);
 
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.right);
-        Debug.Log(hit.transform.position);
-        if (hit != null)
+        int obstacle_mask = (LayerMask.GetMask("Obstacle"));
+        RaycastHit2D hitForward = Physics2D.Raycast(transform.position, Vector2.right, 0.8f, obstacle_mask);
+        if (hitForward && hitForward.transform)
         {
-            Obstacle jump = hit.collider.transform.GetComponent<Obstacle>();
-            if (jump != null)
+            Obstacle obstacle = hitForward.transform.GetComponent<Obstacle>();
+            if (obstacle)
             {
-                Debug.Log("jump over obstacle");
+                playerManager.JumpUp();
             }
-//            float distance = Vector2.Distance(transform.position, hit.collider.transform.position);
-//            Debug.Log(hit.point);
-//            Debug.Log(hit.collider.transform.position);
-//            if (hit.collider && distance <= 0.8f)
-//            {
-//                Debug.Log("hit collider");
-//            }
+
+        }
+        
+        Vector2 down = transform.TransformDirection(Vector2.down) * 0.8f;
+        Debug.DrawRay (transform.position, down, Color.red);
+        
+        int tile_mask = (LayerMask.GetMask("Tile"));
+        RaycastHit2D hitDown = Physics2D.Raycast(transform.position, Vector2.down, 0.8f, tile_mask);
+        if (hitDown && hitDown.transform)
+        {
+            Tile obstacle = hitForward.transform.GetComponent<Tile>();
+            if (obstacle)
+            {
+                playerManager.JumpUp();
+            }
+
         }
     }
 }
