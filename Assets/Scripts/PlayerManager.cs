@@ -8,6 +8,7 @@ public class PlayerManager : MonoBehaviour
     public float playerSpeed = 5;
     public float jumpForce = 20;
     public bool IsOnObstacle = false;
+    public bool IsJumping = false;
 
     public void MoveUp()
     {
@@ -35,8 +36,18 @@ public class PlayerManager : MonoBehaviour
         if (hitForward && hitForward.transform)
         {
             Obstacle obstacle = hitForward.transform.GetComponent<Obstacle>();
-            if (obstacle)
+            if (obstacle && obstacle.type == Obstacle.obstacleType.jump)
             {
+                MoveUp();
+            }
+            if (obstacle && obstacle.type == Obstacle.obstacleType.kill)
+            {
+                Debug.Log("Game Over");
+            }
+            if (obstacle && obstacle.type == Obstacle.obstacleType.trampoline)
+            {
+                Debug.Log("Big Jump");
+                IsJumping = true;
                 MoveUp();
             }
         }
@@ -49,9 +60,10 @@ public class PlayerManager : MonoBehaviour
         if (hitDown && hitDown.transform)
         {
             Tile tile = hitDown.transform.GetComponent<Tile>();
-            if (tile && IsOnObstacle)
+            if (tile && (IsOnObstacle || IsJumping))
             {
                 MoveDown();
+                IsJumping = false;
             }
         }
 
@@ -60,7 +72,7 @@ public class PlayerManager : MonoBehaviour
 
         int empty_tile_mask = (LayerMask.GetMask("EmptyTile"));
         RaycastHit2D hitDown_empty = Physics2D.Raycast(transform.position, down_empty, empty_tile_mask);
-        if (hitDown_empty && hitDown_empty.transform)
+        if (hitDown_empty && hitDown_empty.transform && !IsJumping)
         {
             EmptyTile emptyTile = hitDown_empty.transform.GetComponent<EmptyTile>();
             if (emptyTile)

@@ -23,11 +23,17 @@
         <e p="Scripts" t="Include">
           <e p="Core" t="Include">
             <e p="CameraBehaviour.cs" t="Include" />
+            <e p="Constants.cs" t="Include" />
             <e p="EventManager.cs" t="Include" />
             <e p="GameManager.cs" t="Include" />
+            <e p="InputManager.cs" t="Include" />
             <e p="MainBehaviour.cs" t="Include" />
             <e p="MainModel.cs" t="Include" />
           </e>
+          <e p="EmptyTile.cs" t="Include" />
+          <e p="Interactable.cs" t="Include" />
+          <e p="Layer.cs" t="Include" />
+          <e p="LayerManager.cs" t="Include" />
           <e p="Obstacle.cs" t="Include" />
           <e p="Player.cs" t="Include" />
           <e p="PlayerManager.cs" t="Include" />
