@@ -37,7 +37,6 @@
           <e p="Layer.cs" t="Include" />
           <e p="LayerManager.cs" t="Include" />
           <e p="Obstacle.cs" t="Include" />
-          <e p="ObstacleTrigger.cs" t="Include" />
           <e p="Player.cs" t="Include" />
           <e p="PlayerManager.cs" t="Include" />
           <e p="Tile.cs" t="Include" />

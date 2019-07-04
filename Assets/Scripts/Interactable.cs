@@ -4,20 +4,21 @@ using UnityEngine;
 
 public class Interactable : MonoBehaviour
 {
+    public bool IsInteractable { get; set; }
     public SpriteRenderer spriteRenderer;
     private YieldInstruction fadeInstruction = new YieldInstruction();
 
-    public void SetTransparent(bool toDeactive)
+    public void SetTransparent(bool toActive)
     {
-        if (toDeactive)
-        {
-            StartCoroutine(FadeOut());
-            spriteRenderer.sortingOrder = Constants.DEACTIVE_SORTING_LAYER;
-        }
-        else
+        if (toActive)
         {
             StartCoroutine(FadeIn());
             spriteRenderer.sortingOrder = Constants.ACTIVE_SORTING_LAYER;
+        }
+        else
+        {
+            StartCoroutine(FadeOut());
+            spriteRenderer.sortingOrder = Constants.DEACTIVE_SORTING_LAYER;
         }
     }
 

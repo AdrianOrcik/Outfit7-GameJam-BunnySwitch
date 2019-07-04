@@ -37,8 +37,8 @@ public class LayerManager : MainBehaviour
         toDeactive.IsActive = false;
         toActive.IsActive = true;
 
-        toDeactive.SetTransparent(toDeactive: true);
-        toActive.SetTransparent(toDeactive: false);
+        toDeactive.SetTransparent(toActive: false);
+        toActive.SetTransparent(toActive: true);
 
         switch (LayerTransform)
         {

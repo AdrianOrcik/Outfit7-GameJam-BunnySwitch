@@ -15,11 +15,12 @@ public class Layer : MainBehaviour
         }
     }
 
-    public void SetTransparent(bool toDeactive)
+    public void SetTransparent(bool toActive)
     {
         foreach (Interactable interactable in Interactables)
         {
-            interactable.SetTransparent(toDeactive);
+            interactable.SetTransparent(toActive);
+            interactable.IsInteractable = toActive;
         }
     }
 }
