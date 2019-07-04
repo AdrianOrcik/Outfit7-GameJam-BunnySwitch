@@ -16,7 +16,7 @@ public class LayerManager : MainBehaviour
 
     private void Start()
     {
-        InputManager.OnSwipe += OnChangeLayer;
+        InputManager.instance.OnSwipe += OnChangeLayer;
         //SwapLayer(Layers[1], Layers[0], isInit: true);
     }
 

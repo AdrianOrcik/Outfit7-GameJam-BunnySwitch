@@ -30,7 +30,10 @@
               <e p="Constants.cs" t="Include" />
               <e p="EventManager.cs" t="Include" />
               <e p="GameManager.cs" t="Include" />
+              <e p="InputBase.cs" t="Include" />
+              <e p="InputDevice.cs" t="Include" />
               <e p="InputManager.cs" t="Include" />
+              <e p="InputMouse.cs" t="Include" />
               <e p="MainBehaviour.cs" t="Include" />
               <e p="MainModel.cs" t="Include" />
             </e>
