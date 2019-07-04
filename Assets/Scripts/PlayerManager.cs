@@ -5,19 +5,26 @@ using UnityEngine;
 public class PlayerManager : MonoBehaviour
 {
     public Player player;
-    public float paylerSpeed = 5;
-
+    public float playerSpeed = 5;
+    public float jumpForce = 20;
+    
     void Start()
     {
         player = Instantiate(player);
+        transform.position = new Vector2(0, 1);
     }
     void Update()
     {
-        player.transform.Translate (Vector3.right * paylerSpeed * Time.deltaTime); 
+        player.transform.Translate (Vector3.right * playerSpeed * Time.deltaTime); 
     }
 
-    public void Jump()
+    public void JumpUp()
     {
-        Debug.Log("jump");
+        player.transform.position = new Vector2(player.transform.position.x, player.transform.position.y + 1);
+    }
+    
+    public void JumpDown()
+    {
+        player.transform.position = new Vector2(player.transform.position.x, 1);
     }
 }
