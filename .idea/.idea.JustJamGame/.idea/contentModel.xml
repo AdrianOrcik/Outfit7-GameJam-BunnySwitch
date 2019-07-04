@@ -33,6 +33,7 @@
             <e p="MainBehaviour.cs" t="Include" />
             <e p="MainModel.cs" t="Include" />
           </e>
+          <e p="EmptyTile.cs" t="Include" />
           <e p="Interactable.cs" t="Include" />
           <e p="Layer.cs" t="Include" />
           <e p="LayerManager.cs" t="Include" />

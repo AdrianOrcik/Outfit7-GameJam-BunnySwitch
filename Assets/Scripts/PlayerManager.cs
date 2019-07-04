@@ -9,23 +9,6 @@ public class PlayerManager : MonoBehaviour
     public float jumpForce = 20;
     public bool IsOnObstacle = false;
 
-    void Start()
-    {
-//        player = Instantiate(player);
-//        transform.position = new Vector2(0, 1);
-    }
-
-
-//    public void JumpUp()
-//    {
-//        player.transform.position = new Vector2(player.transform.position.x, player.transform.position.y + 1);
-//    }
-//    
-//    public void JumpDown()
-//    {
-//        player.transform.position = new Vector2(player.transform.position.x, player.transform.position.y -1);
-//    }
-
     public void MoveUp()
     {
         IsOnObstacle = true;
@@ -54,27 +37,37 @@ public class PlayerManager : MonoBehaviour
             Obstacle obstacle = hitForward.transform.GetComponent<Obstacle>();
             if (obstacle)
             {
-                if (obstacle.IsInteractable)
-                {
-                    MoveUp();
-                }
+                MoveUp();
             }
         }
 
-        Vector2 down = transform.TransformDirection(Vector2.down);
+        Vector2 down = Vector2.down;
         Debug.DrawRay(transform.position, down, Color.red);
 
         int tile_mask = (LayerMask.GetMask("Tile"));
-        RaycastHit2D hitDown = Physics2D.Raycast(transform.position, Vector2.down, tile_mask);
+        RaycastHit2D hitDown = Physics2D.Raycast(transform.position, down, tile_mask);
         if (hitDown && hitDown.transform)
         {
             Tile tile = hitDown.transform.GetComponent<Tile>();
             if (tile && IsOnObstacle)
             {
-                if (tile.IsInteractable)
-                {
-                    MoveDown();
-                }
+                MoveDown();
+            }
+        }
+
+        Vector2 down_empty = Vector2.down * 10;
+        Debug.DrawRay(transform.position, down_empty, Color.red);
+
+        int empty_tile_mask = (LayerMask.GetMask("EmptyTile"));
+        RaycastHit2D hitDown_empty = Physics2D.Raycast(transform.position, down_empty, empty_tile_mask);
+        if (hitDown_empty && hitDown_empty.transform)
+        {
+            EmptyTile emptyTile = hitDown_empty.transform.GetComponent<EmptyTile>();
+            if (emptyTile)
+            {
+                MoveDown();
+                MoveDown();
+                MoveDown();
             }
         }
     }

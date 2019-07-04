@@ -4,21 +4,31 @@ using UnityEngine;
 
 public class Interactable : MonoBehaviour
 {
-    public bool IsInteractable { get; set; }
-    public SpriteRenderer spriteRenderer;
+    public SpriteRenderer SpriteRenderer;
+    public BoxCollider2D BoxCollider2D;
     private YieldInstruction fadeInstruction = new YieldInstruction();
 
     public void SetTransparent(bool toActive)
     {
         if (toActive)
         {
-            StartCoroutine(FadeIn());
-            spriteRenderer.sortingOrder = Constants.ACTIVE_SORTING_LAYER;
+            if (SpriteRenderer != null)
+            {
+                StartCoroutine(FadeIn());
+                SpriteRenderer.sortingOrder = Constants.ACTIVE_SORTING_LAYER;
+            }
+
+            BoxCollider2D.enabled = true;
         }
         else
         {
-            StartCoroutine(FadeOut());
-            spriteRenderer.sortingOrder = Constants.DEACTIVE_SORTING_LAYER;
+            if (SpriteRenderer != null)
+            {
+                StartCoroutine(FadeOut());
+                SpriteRenderer.sortingOrder = Constants.DEACTIVE_SORTING_LAYER;
+            }
+
+            BoxCollider2D.enabled = false;
         }
     }
 
@@ -27,13 +37,13 @@ public class Interactable : MonoBehaviour
         //yield return new WaitForSeconds(0.5f);
 
         float elapsedTime = 0.0f;
-        Color c = spriteRenderer.color;
+        Color c = SpriteRenderer.color;
         while (elapsedTime < Constants.SPRITE_FADE_OUT_TIME)
         {
             yield return fadeInstruction;
             elapsedTime += Time.deltaTime;
             c.a = 1.0f - Mathf.Clamp01(elapsedTime / Constants.SPRITE_FADE_OUT_TIME);
-            spriteRenderer.color = c;
+            SpriteRenderer.color = c;
             if (c.a < Constants.DEACTIVE_LAYER_ALPHA)
             {
                 break;
@@ -44,13 +54,13 @@ public class Interactable : MonoBehaviour
     IEnumerator FadeIn()
     {
         float elapsedTime = 0.0f;
-        Color c = spriteRenderer.color;
+        Color c = SpriteRenderer.color;
         while (elapsedTime < Constants.SPRITE_FADE_IN_TIME)
         {
             yield return fadeInstruction;
             elapsedTime += Time.deltaTime;
             c.a = Mathf.Clamp01(elapsedTime / Constants.SPRITE_FADE_IN_TIME);
-            spriteRenderer.color = c;
+            SpriteRenderer.color = c;
         }
     }
 }

@@ -20,7 +20,6 @@ public class Layer : MainBehaviour
         foreach (Interactable interactable in Interactables)
         {
             interactable.SetTransparent(toActive);
-            interactable.IsInteractable = toActive;
         }
     }
 }
