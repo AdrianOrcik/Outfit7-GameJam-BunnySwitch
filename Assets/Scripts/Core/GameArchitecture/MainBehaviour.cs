@@ -5,12 +5,13 @@ public class MainBehaviour : MonoBehaviour
     //assigned manually, only one instance per entire game
     public GameManager GameManager => MainModel.GameManager;
 
-
     //instance per scene
     public EventManager EventManager => GetAssignedClass<EventManager>();
     public CameraManager CameraManager => GetAssignedClass<CameraManager>();
     public InputManager InputManager => GetAssignedClass<InputManager>();
     public LayerManager LayerManager => GetAssignedClass<LayerManager>();
+    public ScreenManager ScreenManager => GetAssignedClass<ScreenManager>();
+
 
     void Awake()
     {

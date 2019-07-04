@@ -21,7 +21,10 @@ public class InputManager : MainBehaviour
 
     private void Update()
     {
-        SwipeDetection();
+        if (MainModel.GameManager.IsPlaying)
+        {
+            SwipeDetection();
+        }
     }
 
     private void SwipeDetection()

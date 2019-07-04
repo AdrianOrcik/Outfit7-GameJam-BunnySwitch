@@ -21,10 +21,18 @@ public class PlayerManager : MonoBehaviour
         IsOnObstacle = false;
     }
 
-    void Update()
+    public void MoveRight()
     {
         //MOVING
         transform.Translate(Vector3.right * playerSpeed * Time.deltaTime);
+    }
+
+    void Update()
+    {
+        if (MainModel.GameManager.IsPlaying)
+        {
+            MoveRight();
+        }
 
         Vector2 right = transform.TransformDirection(Vector2.right) * 0.8f;
         Debug.DrawRay(transform.position, right, Color.red);
@@ -64,6 +72,7 @@ public class PlayerManager : MonoBehaviour
             EmptyTile emptyTile = hitDown_empty.transform.GetComponent<EmptyTile>();
             if (emptyTile)
             {
+                MainModel.GameManager.OnGameOver?.Invoke();
                 MoveDown();
                 MoveDown();
                 MoveDown();

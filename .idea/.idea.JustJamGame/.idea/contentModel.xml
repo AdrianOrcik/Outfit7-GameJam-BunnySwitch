@@ -25,15 +25,26 @@
         </e>
         <e p="Scripts" t="Include">
           <e p="Core" t="Include">
-            <e p="CameraManager.cs" t="Include" />
-            <e p="Constants.cs" t="Include" />
-            <e p="EventManager.cs" t="Include" />
-            <e p="GameManager.cs" t="Include" />
-            <e p="InputManager.cs" t="Include" />
-            <e p="MainBehaviour.cs" t="Include" />
-            <e p="MainModel.cs" t="Include" />
+            <e p="GameArchitecture" t="Include">
+              <e p="CameraManager.cs" t="Include" />
+              <e p="Constants.cs" t="Include" />
+              <e p="EventManager.cs" t="Include" />
+              <e p="GameManager.cs" t="Include" />
+              <e p="InputManager.cs" t="Include" />
+              <e p="MainBehaviour.cs" t="Include" />
+              <e p="MainModel.cs" t="Include" />
+            </e>
+            <e p="ScreenArchitecture" t="Include">
+              <e p="GameOverScreen.cs" t="Include" />
+              <e p="ScreenBehaviour.cs" t="Include" />
+              <e p="ScreenManager.cs" t="Include" />
+              <e p="StartScreen.cs" t="Include" />
+            </e>
           </e>
           <e p="EmptyTile.cs" t="Include" />
+          <e p="Enums" t="Include">
+            <e p="SubScreens.cs" t="Include" />
+          </e>
           <e p="Interactable.cs" t="Include" />
           <e p="Layer.cs" t="Include" />
           <e p="LayerManager.cs" t="Include" />
@@ -41,6 +52,34 @@
           <e p="Player.cs" t="Include" />
           <e p="PlayerManager.cs" t="Include" />
           <e p="Tile.cs" t="Include" />
+        </e>
+        <e p="TextMesh Pro" t="Include">
+          <e p="Fonts" t="Include">
+            <e p="LiberationSans - OFL.txt" t="Include" />
+          </e>
+          <e p="Resources" t="Include">
+            <e p="LineBreaking Following Characters.txt" t="Include" />
+            <e p="LineBreaking Leading Characters.txt" t="Include" />
+            <e p="Shaders" t="Include">
+              <e p="TMP_Bitmap-Custom-Atlas.shader" t="Include" />
+              <e p="TMP_Bitmap-Mobile.shader" t="Include" />
+              <e p="TMP_Bitmap.shader" t="Include" />
+              <e p="TMP_SDF Overlay.shader" t="Include" />
+              <e p="TMP_SDF-Mobile Masking.shader" t="Include" />
+              <e p="TMP_SDF-Mobile Overlay.shader" t="Include" />
+              <e p="TMP_SDF-Mobile.shader" t="Include" />
+              <e p="TMP_SDF-Surface-Mobile.shader" t="Include" />
+              <e p="TMP_SDF-Surface.shader" t="Include" />
+              <e p="TMP_SDF.shader" t="Include" />
+              <e p="TMP_Sprite.shader" t="Include" />
+              <e p="TMPro.cginc" t="Include" />
+              <e p="TMPro_Properties.cginc" t="Include" />
+              <e p="TMPro_Surface.cginc" t="Include" />
+            </e>
+          </e>
+          <e p="Sprites" t="Include">
+            <e p="EmojiOne Attribution.txt" t="Include" />
+          </e>
         </e>
       </e>
       <e p="JustJamGame.sln" t="IncludeFlat" />

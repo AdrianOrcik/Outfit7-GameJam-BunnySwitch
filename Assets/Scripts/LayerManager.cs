@@ -17,7 +17,7 @@ public class LayerManager : MainBehaviour
     private void Start()
     {
         InputManager.OnSwipe += OnChangeLayer;
-        SwapLayer(Layers[1], Layers[0]);
+        //SwapLayer(Layers[1], Layers[0], isInit: true);
     }
 
     public void OnChangeLayer()
@@ -32,7 +32,7 @@ public class LayerManager : MainBehaviour
         }
     }
 
-    public void SwapLayer(Layer toDeactive, Layer toActive)
+    public void SwapLayer(Layer toDeactive, Layer toActive, bool isInit = false)
     {
         toDeactive.IsActive = false;
         toActive.IsActive = true;
