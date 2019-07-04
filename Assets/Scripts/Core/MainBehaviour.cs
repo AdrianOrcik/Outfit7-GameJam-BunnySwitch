@@ -8,7 +8,7 @@ public class MainBehaviour : MonoBehaviour
 
     //instance per scene
     public EventManager EventManager => GetAssignedClass<EventManager>();
-    public CameraBehaviour CameraManager => GetAssignedClass<CameraBehaviour>();
+    public CameraManager CameraManager => GetAssignedClass<CameraManager>();
     public InputManager InputManager => GetAssignedClass<InputManager>();
     public LayerManager LayerManager => GetAssignedClass<LayerManager>();
 

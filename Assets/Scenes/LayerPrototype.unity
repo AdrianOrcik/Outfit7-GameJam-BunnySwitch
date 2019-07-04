@@ -458,6 +458,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 384642367}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &483725327 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7120459774956774529, guid: 8b453da0d5c170b4d8453054e1bf2749,
+    type: 3}
+  m_PrefabInstance: {fileID: 927787870}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &494432095 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8696779718026201325, guid: bff136bc421314b9b925529bec92f3d7,
@@ -566,6 +572,7 @@ GameObject:
   - component: {fileID: 645214620}
   - component: {fileID: 645214619}
   - component: {fileID: 645214618}
+  - component: {fileID: 645214621}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -631,12 +638,27 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 645214617}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.69, y: 2.42, z: -10}
+  m_LocalPosition: {x: 0, y: 2.5, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &645214621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 645214617}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89290b57e31f94484a87d0a9d7813451, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DampTime: 7
+  Target: {fileID: 483725327}
+  CameraOffset: {x: 0, y: 1, z: 0}
 --- !u!1001 &703905471
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1122,6 +1144,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 183401483133376354, guid: 8b453da0d5c170b4d8453054e1bf2749,
+        type: 3}
+      propertyPath: playerSpeed
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 568169164084695995, guid: 8b453da0d5c170b4d8453054e1bf2749, type: 3}

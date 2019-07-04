@@ -24,8 +24,7 @@ public class PlayerManager : MonoBehaviour
     void Update()
     {
         //MOVING
-        transform.Translate(Vector3.right * Time.deltaTime);
-
+        transform.Translate(Vector3.right * playerSpeed * Time.deltaTime);
 
         Vector2 right = transform.TransformDirection(Vector2.right) * 0.8f;
         Debug.DrawRay(transform.position, right, Color.red);
