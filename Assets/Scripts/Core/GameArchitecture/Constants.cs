@@ -17,4 +17,11 @@ public static class Constants
 
     public static int DEACTIVE_SORTING_LAYER = 10;
     public static int ACTIVE_SORTING_LAYER = 15;
+    
+    //----Level Editor
+    public const float HEIGHT_LINE = 18f;
+    public const int CELL_SIZE = 50;
+    public const int CELL_PADDING = 50;
+    public const int ID_CODE_LENGTH = 6;
+
 }

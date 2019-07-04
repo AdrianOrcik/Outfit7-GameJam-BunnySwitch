@@ -7,6 +7,7 @@
     <e p="$APPLICATION_CONFIG_DIR$/extensions" t="IncludeRecursive" />
     <e p="$APPLICATION_CONFIG_DIR$/scratches" t="IncludeRecursive" />
     <e p="$PROJECT_DIR$" t="IncludeRecursive">
+      <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="Demigiant" t="Include">
@@ -22,6 +23,21 @@
             </e>
             <e p="readme.txt" t="Include" />
           </e>
+        </e>
+        <e p="Editor" t="Include">
+          <e p="LevelEditor" t="Include">
+            <e p="ButtonsPanelEditor.cs" t="Include" />
+            <e p="GridObj.cs" t="Include" />
+            <e p="GridType.cs" t="Include" />
+            <e p="LevelEditorWindow.cs" t="Include" />
+            <e p="OptionIconType.cs" t="Include" />
+            <e p="PopupAlertEditorWindow.cs" t="Include" />
+            <e p="PredictionViewEditor.cs" t="Include" />
+            <e p="SaveEditorWindow.cs" t="Include" />
+          </e>
+        </e>
+        <e p="JsonDotNet" t="Include">
+          <e p="link.xml" t="Include" />
         </e>
         <e p="Scripts" t="Include">
           <e p="Core" t="Include">
@@ -43,6 +59,13 @@
               <e p="ScreenManager.cs" t="Include" />
               <e p="StartScreen.cs" t="Include" />
             </e>
+          </e>
+          <e p="DataClass" t="Include">
+            <e p="EditorData.cs" t="Include" />
+            <e p="LevelData.cs" t="Include" />
+            <e p="LevelDefinition.cs" t="Include" />
+            <e p="LevelInGameDefinition.cs" t="Include" />
+            <e p="PathDefinition.cs" t="Include" />
           </e>
           <e p="EmptyTile.cs" t="Include" />
           <e p="Enums" t="Include">
