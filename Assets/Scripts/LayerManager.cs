@@ -28,6 +28,7 @@ public class LayerManager : MainBehaviour
 #if !UNITY_EDITOR && ( UNITY_ANDROID || UNITY_IOS )
           MainModel.GameManager.OnStartGame += OnChangeLayer;
 #endif
+        MainModel.GameManager.OnStartGame += OnChangeLayer;
     }
 
     public void SpawnLayerBlock(int blockID)
