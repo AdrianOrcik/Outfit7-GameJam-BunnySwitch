@@ -8,12 +8,10 @@ public class CameraManager : MainBehaviour
     public bool IsTargeting { get; set; }
 
     public Transform Target;
-    public float DampTime = 10f;
+    private float DampTime = 7f;
     public Vector3 CameraOffset;
 
     private float margin = 0.1f;
-
-
     private void Start()
     {
         IsTargeting = true;

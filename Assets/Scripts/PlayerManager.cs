@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 
 public class PlayerManager : MainBehaviour
@@ -8,6 +9,11 @@ public class PlayerManager : MainBehaviour
     public bool IsOnObstacle = false;
     public bool IsJumping = false;
     public float obstacleDistance = 0.1f;
+
+    private void Start()
+    {
+        InputManager.instance.OnSwipe += OnPlayerBounce;
+    }
 
     public void JumpUp()
     {
@@ -27,6 +33,23 @@ public class PlayerManager : MainBehaviour
         {
             transform.Translate(Vector3.right * Time.deltaTime * playerSpeed);
         }
+    }
+
+    public void OnPlayerBounce()
+    {
+        StartCoroutine(PlayerBounceRoutine());
+    }
+
+    private IEnumerator PlayerBounceRoutine()
+    {
+        yield return new WaitForSeconds(0.2f);
+        Vector3 bounceUp = new Vector3(0f, 0.2f, 0);
+
+        Sequence mySequence = DOTween.Sequence();
+        mySequence.Append(transform.DOMoveY(transform.position.y + bounceUp.y, 0.15f)
+            .SetEase(Ease.OutBack));
+        mySequence.Append(transform.DOMoveY(transform.position.y, 0.2f)
+            .SetEase(Ease.InExpo));
     }
 
     void Update()
