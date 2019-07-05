@@ -12,6 +12,7 @@ public class GameManager : MainBehaviour
     private void Awake()
     {
         MainModel.GameManager = this;
+        DontDestroyOnLoad(this);
     }
 
     private void Start()
