@@ -59,8 +59,9 @@ public class PlayerManager : MainBehaviour
         }
     }
 
-    private float interectableDistance = 0.8f;
+    private float interectableDistance = 0.5f;
     private float tileDistance = 1f;
+    private float EmptyTileDistance = 1.5f;
 
     void Update()
     {
@@ -77,10 +78,16 @@ public class PlayerManager : MainBehaviour
                 switch (interactable.ObstacleType)
                 {
                     case ObstacleType.trampoline:
+                        interactable.gameObject.transform.GetChild(0).GetComponent<Animator>().SetBool(Constants.MushroomBounce, true);
                         JumpUp();
                         break;
                     case ObstacleType.kill:
-                        Debug.Log("kill");
+                        Debug.Log("Kill");
+                        MainModel.GameManager.IsPlaying = false;
+                        Animator.SetBool(Constants.PlayerDieObstacleAnimation, true);
+                        break;
+                    case ObstacleType.jump:
+                        Animator.SetBool(Constants.PlayerDieFallAnimation, true);
                         break;
                 }
             }
@@ -96,6 +103,21 @@ public class PlayerManager : MainBehaviour
                 tileDistance)
             {
                 JumpDown();
+            }
+        }
+        
+        RaycastHit2D hitEmpty = Physics2D.Raycast(CharacterTransform.position, Vector2.down);
+        Debug.DrawRay(CharacterTransform.position, Vector2.down, Color.red);
+        if (hitEmpty.collider != null && hitEmpty.collider.GetComponent<EmptyTile>())
+        {
+            //Debug.Log("fall test");
+            EmptyTile tile = hitEmpty.collider.GetComponent<EmptyTile>();
+            //Debug.Log(Vector3.Distance(tile.gameObject.transform.position, CharacterTransform.position));
+            if (Vector3.Distance(tile.gameObject.transform.position, CharacterTransform.position) <
+                EmptyTileDistance)
+            {
+                Animator.SetBool(Constants.PlayerDieFallAnimation, true);
+               Debug.Log("fall");
             }
         }
     }

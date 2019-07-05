@@ -23,6 +23,7 @@ public static class Constants
     public static string ObstacleLayer = "Obstacle";
     public static string TileLayer = "Tile";
     public static string EmptyTileLayer = "EmptyTile";
+    public static string MushroomBounce = "Bounce";
 
     public static string PlayerRunAnimation = "Run";
     public static string PlayerDieObstacleAnimation = "DieObstacle";
