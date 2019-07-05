@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Interactable : MainBehaviour
 {
+    public ObstacleType ObstacleType = ObstacleType.none;
     public SpriteRenderer SpriteRenderer;
     public BoxCollider2D BoxCollider2D;
     private YieldInstruction fadeInstruction = new YieldInstruction();

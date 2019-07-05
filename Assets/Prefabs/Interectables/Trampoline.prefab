@@ -91,7 +91,7 @@ GameObject:
   - component: {fileID: 7559192005371486024}
   - component: {fileID: 6590870704547833893}
   m_Layer: 8
-  m_Name: Trampolin
+  m_Name: Trampoline
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -124,9 +124,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b7c381ddba68f94ba944063093a15f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ObstacleType: 3
   SpriteRenderer: {fileID: 8696779716926706411}
   BoxCollider2D: {fileID: 6590870704547833893}
-  type: 3
 --- !u!61 &6590870704547833893
 BoxCollider2D:
   m_ObjectHideFlags: 0

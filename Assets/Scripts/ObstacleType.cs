@@ -1,4 +1,4 @@
-﻿public enum obstacleType
+﻿public enum ObstacleType
 {
     none,
     jump,

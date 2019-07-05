@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Obstacle : Interactable
 {
-    public obstacleType type = obstacleType.none;
+
 
     private void Start()
     {
