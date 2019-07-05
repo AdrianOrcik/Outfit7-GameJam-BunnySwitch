@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
 
-//TODO: FallDown behaviour -> EmptyTile
-//TODO: Kill behaviour
 public class PlayerManager : MainBehaviour
 {
     public float playerSpeed = 5;
@@ -31,13 +29,23 @@ public class PlayerManager : MainBehaviour
             .SetEase(Ease.InExpo));
         mySequence.AppendInterval(Constants.PLAYER_TRAMPOLINE_JUMP_UP_TIME + Constants.PLAYER_TRAMPOLINE_JUMP_DOWN_TIME)
             .OnComplete(OnJumpCompleted);
-
+        
+        Sequence animationSequence = DOTween.Sequence();
+        animationSequence.AppendInterval(Constants.PLAYER_TRAMPOLINE_JUMP_UP_TIME)
+            .OnComplete(EndJumpAnimation);
+            
+        Animator.SetBool(Constants.PlayerJumpUp, true);
         IsJumping = true;
     }
 
     void OnJumpCompleted()
     {
         IsJumping = false;
+    }
+
+    void EndJumpAnimation()
+    {
+        Animator.SetBool(Constants.PlayerJumpUp, false);
     }
 
     public void JumpDown()
