@@ -12,7 +12,6 @@ public class PlayerManager : MainBehaviour
 
     private void Start()
     {
-        InputManager.instance.OnSwipe += OnPlayerBounce;
     }
 
     public void JumpUp()
@@ -35,22 +34,6 @@ public class PlayerManager : MainBehaviour
         }
     }
 
-    public void OnPlayerBounce()
-    {
-        StartCoroutine(PlayerBounceRoutine());
-    }
-
-    private IEnumerator PlayerBounceRoutine()
-    {
-        yield return new WaitForSeconds(Constants.PLAYER_BOUCE_WAIT_TIME);
-        Vector3 bounceUp = new Vector3(0f, 0.2f, 0);
-
-        Sequence mySequence = DOTween.Sequence();
-        mySequence.Append(transform.DOMoveY(transform.position.y + bounceUp.y, Constants.PLAYER_BOUCE_UP_TIME)
-            .SetEase(Ease.OutBack));
-        mySequence.Append(transform.DOMoveY(transform.position.y, Constants.PLAYER_BOUCE_DOWN_TIME)
-            .SetEase(Ease.InExpo));
-    }
 
     void Update()
     {

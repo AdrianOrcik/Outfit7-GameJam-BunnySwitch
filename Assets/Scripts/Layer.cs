@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class Layer : MainBehaviour
 {
@@ -22,4 +23,5 @@ public class Layer : MainBehaviour
             interactable.SetTransparent(toActive);
         }
     }
+
 }
