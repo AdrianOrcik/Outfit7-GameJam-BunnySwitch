@@ -35,6 +35,7 @@
               <e p="MainModel.cs" t="Include" />
             </e>
             <e p="ScreenArchitecture" t="Include">
+              <e p="CreditsScreen.cs" t="Include" />
               <e p="GameOverScreen.cs" t="Include" />
               <e p="ScreenBehaviour.cs" t="Include" />
               <e p="ScreenManager.cs" t="Include" />
