@@ -43,6 +43,7 @@ public class PlayerManager : MonoBehaviour
 
             if (obstacle && obstacle.type == Obstacle.obstacleType.kill)
             {
+                MainModel.GameManager.OnGameOver?.Invoke();
                 Debug.Log("Game Over");
             }
 
@@ -75,6 +76,7 @@ public class PlayerManager : MonoBehaviour
                 JumpDown();
                 JumpDown();
                 JumpDown();
+                MainModel.GameManager.OnGameOver?.Invoke();
             }
         }
     }
