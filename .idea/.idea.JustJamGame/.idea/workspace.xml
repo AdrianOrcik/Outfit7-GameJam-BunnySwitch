@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b3cab661-bbf9-4cf9-8fdc-57e136c4d344" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.JustJamGame/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.JustJamGame/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/LayerPrototype.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/LayerPrototype.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/GameArchitecture/Constants.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/GameArchitecture/Constants.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/LayerManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/LayerManager.cs" afterDir="false" />
-    </list>
+    <list default="true" id="b3cab661-bbf9-4cf9-8fdc-57e136c4d344" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -449,12 +444,12 @@
       <option name="presentableId" value="Default" />
       <updated>1562247032963</updated>
       <workItem from="1562247040792" duration="344000" />
-      <workItem from="1562306072437" duration="5451000" />
+      <workItem from="1562306072437" duration="5561000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23422000" />
+    <option name="totallyTimeSpent" value="23532000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
