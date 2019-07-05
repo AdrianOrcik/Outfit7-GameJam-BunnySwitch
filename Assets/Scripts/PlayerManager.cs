@@ -101,18 +101,23 @@ public class PlayerManager : MainBehaviour
 
         RaycastHit2D hit;
         Vector2 rayVector;
+        Vector2 startPoint = transform.position;
+        if (direction == Vector2.down)
+        {
+            startPoint.x = startPoint.x - 0.5f;
+        }
         if (distance == -1)
         {
             rayVector = transform.TransformDirection(direction);
-            hit = Physics2D.Raycast(transform.position, rayVector, mask);
+            hit = Physics2D.Raycast(startPoint, rayVector, mask);
         }
         else
         {
             rayVector = transform.TransformDirection(direction) * distance;
-            hit = Physics2D.Raycast(transform.position, rayVector, distance, mask);
+            hit = Physics2D.Raycast(startPoint, rayVector, distance, mask);
         }
 
-        Debug.DrawRay(transform.position, rayVector, Color.red);
+        Debug.DrawRay(startPoint, rayVector, Color.red);
         return hit;
     }
 }
