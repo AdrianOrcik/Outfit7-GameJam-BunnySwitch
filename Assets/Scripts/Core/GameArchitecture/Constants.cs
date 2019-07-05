@@ -27,4 +27,9 @@ public static class Constants
     public static string PlayerRunAnimation = "Run";
     public static string PlayerDieObstacleAnimation = "DieObstacle";
     public static string PlayerDieFallAnimation = "DieFall";
+
+    public static float PLAYER_BOUCE_WAIT_TIME = 0.25f;
+    public static float PLAYER_BOUCE_UP_TIME = 0.2f;
+    public static float PLAYER_BOUCE_DOWN_TIME = 0.1f;
+    
 }

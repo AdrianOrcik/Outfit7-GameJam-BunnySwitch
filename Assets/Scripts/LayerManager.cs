@@ -15,14 +15,19 @@ public class LayerManager : MainBehaviour
         LayerBlocks = new List<LayerBlock>();
         for (int i = 0; i < 10; i++)
         {
-            SpawnLayerBlock();
+            if (i == 0)
+            {
+                SpawnLayerBlock(0);
+            }
+            else
+            {
+                SpawnLayerBlock(Random.Range(1, LayerBlocksGO.Length));
+            }
         }
     }
 
-    public void SpawnLayerBlock()
+    public void SpawnLayerBlock(int blockID)
     {
-        int blockID = Random.Range(0, LayerBlocksGO.Length);
-
         LayerBlock layerBlock = Instantiate(LayerBlocksGO[blockID],
             new Vector3(Constants.LAYER_WIDTH * LayerBlocks.Count, 0, LayerBlocksGO[blockID].transform.position.z),
             Quaternion.identity);

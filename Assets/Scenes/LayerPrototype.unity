@@ -620,7 +620,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 483725327}
-  DampTime: 7
   CameraOffset: {x: 0, y: 1, z: 0}
 --- !u!1 &803175743
 GameObject:
@@ -1223,6 +1222,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LayerBlocksGO:
+  - {fileID: 7749075822745681485, guid: cf147f24c30fe4ae486dfcaa93b9162d, type: 3}
   - {fileID: 7749075822745681485, guid: 7638a55df761d4c69a543fc6d53db3d0, type: 3}
   - {fileID: 7749075822745681485, guid: 56bd60bbeb3b1427c85f541ae9c09d0e, type: 3}
 --- !u!1 &1905443495
