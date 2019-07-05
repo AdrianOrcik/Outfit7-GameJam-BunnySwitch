@@ -23,5 +23,4 @@ public class Layer : MainBehaviour
             interactable.SetTransparent(toActive);
         }
     }
-
 }

@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
 
-
+//TODO: FallDown behaviour
+//TODO: Kill behaviour
 public class PlayerManager : MainBehaviour
 {
     public float playerSpeed = 5;
-    public bool IsJumping = false;
+    public bool IsJumping;
 
+    public Animator Animator;
+    public Transform CharacterTransform;
     public Tile CurrentTile;
 
     private void Start()
@@ -17,8 +20,6 @@ public class PlayerManager : MainBehaviour
 
     public void JumpUp()
     {
-        //IsOnObstacle = true;
-
         Vector3 bounceUp = new Vector3(0f, 3f, 0);
         Vector3 finalBounceUp = new Vector3(0f, 2f, 0);
         float defaultYpos = transform.position.y;
@@ -45,7 +46,7 @@ public class PlayerManager : MainBehaviour
         {
             Sequence mySequence = DOTween.Sequence();
             mySequence.Append(transform
-                .DOMoveY(transform.position.y - 1, Constants.PLAYER_TRAMPOLINE_JUMP_DOWN_TIME)
+                .DOMoveY(CurrentTile.position_Y, Constants.PLAYER_TRAMPOLINE_JUMP_DOWN_TIME)
                 .SetEase(Ease.OutExpo));
         }
     }
@@ -65,12 +66,12 @@ public class PlayerManager : MainBehaviour
     {
         MoveRight();
 
-        RaycastHit2D hitInterectables = Physics2D.Raycast(transform.position, Vector2.right);
-        Debug.DrawRay(transform.position, Vector2.right, Color.red);
+        RaycastHit2D hitInterectables = Physics2D.Raycast(CharacterTransform.position, Vector2.right);
+        Debug.DrawRay(CharacterTransform.position, Vector2.right, Color.red);
         if (hitInterectables.collider != null && hitInterectables.collider.GetComponent<Interactable>())
         {
             Interactable interactable = hitInterectables.collider.GetComponent<Interactable>();
-            if (Vector3.Distance(interactable.gameObject.transform.position, transform.position) <
+            if (Vector3.Distance(interactable.gameObject.transform.position, CharacterTransform.position) <
                 interectableDistance)
             {
                 switch (interactable.ObstacleType)
@@ -85,14 +86,13 @@ public class PlayerManager : MainBehaviour
             }
         }
 
-        RaycastHit2D hitGround = Physics2D.Raycast(transform.position, Vector2.down);
-        Debug.DrawRay(transform.position, Vector2.down, Color.red);
+        RaycastHit2D hitGround = Physics2D.Raycast(CharacterTransform.position, Vector2.down);
+        Debug.DrawRay(CharacterTransform.position, Vector2.down, Color.red);
         if (hitGround.collider != null && hitGround.collider.GetComponent<Tile>())
         {
             Tile tile = hitGround.collider.GetComponent<Tile>();
             CurrentTile = tile;
-            Debug.Log("TileDistance: " + Vector3.Distance(tile.gameObject.transform.position, transform.position));
-            if (Vector3.Distance(tile.gameObject.transform.position, transform.position) >
+            if (Vector3.Distance(tile.gameObject.transform.position, CharacterTransform.position) >
                 tileDistance)
             {
                 JumpDown();

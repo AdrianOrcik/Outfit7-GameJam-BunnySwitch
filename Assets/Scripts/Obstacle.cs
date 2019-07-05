@@ -5,8 +5,6 @@ using UnityEngine;
 
 public class Obstacle : Interactable
 {
-
-
     private void Start()
     {
         InputManager.instance.OnSwipe += OnObstacleBounce;
@@ -32,6 +30,4 @@ public class Obstacle : Interactable
         mySequence.Append(transform.DOMoveY(defaultYPos, Constants.OBSTACLE_BOUCE_DOWN_TIME)
             .SetEase(Ease.InExpo));
     }
-    
-    
 }

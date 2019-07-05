@@ -29,7 +29,7 @@ public class GameManager : MainBehaviour
     private IEnumerator GameOverRoutine()
     {
         IsPlaying = false;
-        FindObjectOfType<PlayerManager>().GetComponent<Animator>().SetBool(Constants.PlayerRunAnimation, false);
+        FindObjectOfType<PlayerManager>().Animator.SetBool(Constants.PlayerRunAnimation, false);
 
         yield return new WaitForSeconds(1f);
         ScreenManager.GetScreen<GameOverScreen>().gameObject.SetActive(true);
@@ -38,7 +38,7 @@ public class GameManager : MainBehaviour
     private void StartGame()
     {
         IsPlaying = true;
-        FindObjectOfType<PlayerManager>().GetComponent<Animator>().SetBool(Constants.PlayerRunAnimation, true);
+        FindObjectOfType<PlayerManager>().Animator.SetBool(Constants.PlayerRunAnimation, true);
     }
 
     //TODO: Refactor for loadingManager
