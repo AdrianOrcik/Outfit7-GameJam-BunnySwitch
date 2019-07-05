@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class InputDevice : InputBase
 {
+    private bool isTouchMoved = false;
+
     protected override void SwipeDetection()
     {
         if (Input.touchCount == 1)
@@ -17,6 +19,7 @@ public class InputDevice : InputBase
             else if (touch.phase == TouchPhase.Moved)
             {
                 lastPosition = touch.position;
+                isTouchMoved = true;
             }
             else if (touch.phase == TouchPhase.Ended)
             {
@@ -24,16 +27,20 @@ public class InputDevice : InputBase
 
                 if (Mathf.Abs(lastPosition.y - firstPosition.y) > dragDistance)
                 {
-                    if (lastPosition.y > firstPosition.y)
+                    if (isTouchMoved)
                     {
-                        OnSwipeUp?.Invoke();
-                    }
-                    else
-                    {
-                        OnSwipeDown?.Invoke();
-                    }
+                        if (lastPosition.y > firstPosition.y)
+                        {
+                            OnSwipeUp?.Invoke();
+                        }
+                        else
+                        {
+                            OnSwipeDown?.Invoke();
+                        }
 
-                    OnSwipe?.Invoke();
+                        OnSwipe?.Invoke();
+                        isTouchMoved = false;
+                    }
                 }
             }
             else
