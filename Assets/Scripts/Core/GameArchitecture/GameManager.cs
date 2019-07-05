@@ -8,6 +8,7 @@ public class GameManager : MainBehaviour
     public Action OnGameOver;
     public Action OnStartGame;
     public bool IsPlaying { get; set; }
+    public PlayerManager PlayerManager { get; set; }
 
     private void Awake()
     {
@@ -38,7 +39,8 @@ public class GameManager : MainBehaviour
     private void StartGame()
     {
         IsPlaying = true;
-        FindObjectOfType<PlayerManager>().Animator.SetBool(Constants.PlayerRunAnimation, true);
+        PlayerManager = FindObjectOfType<PlayerManager>();
+        PlayerManager.Animator.SetBool(Constants.PlayerRunAnimation, true);
     }
 
     //TODO: Refactor for loadingManager

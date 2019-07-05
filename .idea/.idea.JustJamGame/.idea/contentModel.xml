@@ -38,10 +38,12 @@
               <e p="MainModel.cs" t="Include" />
             </e>
             <e p="ScreenArchitecture" t="Include">
+              <e p="CreditsScreen.cs" t="Include" />
               <e p="GameOverScreen.cs" t="Include" />
+              <e p="GameScreen.cs" t="Include" />
+              <e p="IntroScreen.cs" t="Include" />
               <e p="ScreenBehaviour.cs" t="Include" />
               <e p="ScreenManager.cs" t="Include" />
-              <e p="StartScreen.cs" t="Include" />
             </e>
           </e>
           <e p="EmptyTile.cs" t="Include" />
@@ -55,6 +57,11 @@
           <e p="LayerTransform.cs" t="Include" />
           <e p="Obstacle.cs" t="Include" />
           <e p="obstacleType.cs" t="Include" />
+          <e p="Parallax" t="Include">
+            <e p="ParallaxCloudBehaviour.cs" t="Include" />
+            <e p="ParallaxLayerBehaviour.cs" t="Include" />
+            <e p="ParallaxManager.cs" t="Include" />
+          </e>
           <e p="Player.cs" t="Include" />
           <e p="PlayerManager.cs" t="Include" />
           <e p="Tile.cs" t="Include" />
