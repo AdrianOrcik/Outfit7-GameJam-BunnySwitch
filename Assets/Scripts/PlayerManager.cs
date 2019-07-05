@@ -8,6 +8,7 @@ public class PlayerManager : MainBehaviour
     public float playerSpeed = 5;
     public bool IsOnObstacle = false;
     public bool IsJumping = false;
+    public bool IsOnPlatform = false;
     public float obstacleDistance = 0.1f;
 
     private void Start()
@@ -60,6 +61,15 @@ public class PlayerManager : MainBehaviour
                 Debug.Log("Big Jump");
                 IsJumping = true;
                 JumpUp();
+                
+                RaycastHit2D hitFloatingPLatform = getRaycastForDiretion(Vector2.right, Constants.TileLayer, 2.0f);
+                if (hitFloatingPLatform && hitFloatingPLatform.transform)
+                {
+                    Debug.Log("Platform");
+                    IsOnPlatform = true;
+                    IsJumping = false;
+                    JumpUp();
+                }
             }
         }
 
@@ -67,28 +77,27 @@ public class PlayerManager : MainBehaviour
         if (hitDown && hitDown.transform)
         {
             Tile tile = hitDown.transform.GetComponent<Tile>();
+            float heigh = Mathf.Floor(hitDown.distance);
             if (tile && (IsOnObstacle || IsJumping))
             {
-                JumpDown();
+                Debug.Log(heigh);
+                for (int i = 0; i < heigh; i++)
+                {
+                    JumpDown();
+                }
                 IsJumping = false;
+                IsOnPlatform = false;
             }
         }
-
-        RaycastHit2D hitDown_empty = getRaycastForDiretion(Vector2.down, Constants.EmptyTileLayer);
-        if (hitDown_empty && hitDown_empty.transform && !IsJumping)
+        else if(MainModel.GameManager.IsPlaying && !IsOnPlatform)
         {
-            EmptyTile emptyTile = hitDown_empty.transform.GetComponent<EmptyTile>();
-            if (emptyTile)
-            {
-                //TODO: generic 
-
-                CameraManager.IsTargeting = false;
-                JumpDown();
-                JumpDown();
-                JumpDown();
-                MainModel.GameManager.OnGameOver?.Invoke();
-                GameObject.Find("Player").GetComponent<Animator>().SetBool(Constants.PlayerDieFallAnimation, true);
-            }
+            Debug.Log("fall down");
+            JumpDown();
+            JumpDown();
+            JumpDown();
+            MainModel.GameManager.OnGameOver?.Invoke();
+            GameObject.Find("Player").GetComponent<Animator>().SetBool(Constants.PlayerDieFallAnimation, true);
+            CameraManager.IsTargeting = false;
         }
     }
 
@@ -98,18 +107,23 @@ public class PlayerManager : MainBehaviour
 
         RaycastHit2D hit;
         Vector2 rayVector;
+        Vector2 startPoint = transform.position;
+        if (direction == Vector2.down)
+        {
+            startPoint.x = startPoint.x - 0.5f;
+        }
         if (distance == -1)
         {
             rayVector = transform.TransformDirection(direction);
-            hit = Physics2D.Raycast(transform.position, rayVector, mask);
+            hit = Physics2D.Raycast(startPoint, rayVector, mask);
         }
         else
         {
             rayVector = transform.TransformDirection(direction) * distance;
-            hit = Physics2D.Raycast(transform.position, rayVector, distance, mask);
+            hit = Physics2D.Raycast(startPoint, rayVector, distance, mask);
         }
 
-        Debug.DrawRay(transform.position, rayVector, Color.red);
+        Debug.DrawRay(startPoint, rayVector, Color.red);
         return hit;
     }
 }
