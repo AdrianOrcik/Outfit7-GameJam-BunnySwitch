@@ -10,11 +10,7 @@ public class PlayerManager : MainBehaviour
     public bool IsJumping = false;
     public bool IsOnPlatform = false;
     public float obstacleDistance = 0.1f;
-
-    private void Start()
-    {
-    }
-
+    
     public void JumpUp()
     {
         IsOnObstacle = true;
@@ -49,6 +45,69 @@ public class PlayerManager : MainBehaviour
 
     void Update()
     {
+//        MoveRight();
+//
+//        RaycastHit2D hitForward = getRaycastForDiretion(Vector2.right, Constants.ObstacleLayer, obstacleDistance);
+//        if (hitForward && hitForward.transform)
+//        {
+//            Obstacle obstacle = hitForward.transform.GetComponent<Obstacle>();
+//            if (obstacle && obstacle.type == obstacleType.jump)
+//            {
+//                JumpUp();
+//            }
+//
+//            if (obstacle && obstacle.type == obstacleType.kill)
+//            {
+//                MainModel.GameManager.OnGameOver?.Invoke();
+//                GameObject.Find("Player").GetComponent<Animator>().SetBool(Constants.PlayerDieObstacleAnimation, true);
+//                Debug.Log("Game Over");
+//            }
+//
+//            if (obstacle && obstacle.type == obstacleType.trampoline)
+//            {
+//                Debug.Log("Big Jump");
+//                IsJumping = true;
+//                JumpUp();
+//
+//                RaycastHit2D hitFloatingPLatform = getRaycastForDiretion(Vector2.right, Constants.TileLayer, 2.0f);
+//                if (hitFloatingPLatform && hitFloatingPLatform.transform)
+//                {
+//                    Debug.Log("Platform");
+//                    IsOnPlatform = true;
+//                    IsJumping = false;
+//                    JumpUp();
+//                }
+//            }
+//        }
+//
+//        RaycastHit2D hitDown = getRaycastForDiretion(Vector2.down, Constants.TileLayer);
+//        if (hitDown && hitDown.transform && !IsOnPlatform)
+//        {
+//            Tile tile = hitDown.transform.GetComponent<Tile>();
+//            float heigh = Mathf.Floor(hitDown.distance);
+//            if (tile && (IsOnObstacle || IsJumping))
+//            {
+//                Debug.Log(heigh);
+//                for (int i = 0; i < heigh; i++)
+//                {
+//                    JumpDown();
+//                }
+//
+//                IsJumping = false;
+//                IsOnPlatform = false;
+//            }
+//        }
+//        else if (MainModel.GameManager.IsPlaying && !IsOnPlatform && !IsJumping)
+//        {
+//            Debug.Log("fall down");
+//            JumpDown();
+//            JumpDown();
+//            JumpDown();
+//            MainModel.GameManager.OnGameOver?.Invoke();
+//            GameObject.Find("Player").GetComponent<Animator>().SetBool(Constants.PlayerDieFallAnimation, true);
+//            CameraManager.IsTargeting = false;
+//        }
+
         MoveRight();
 
         RaycastHit2D hitForward = getRaycastForDiretion(Vector2.right, Constants.ObstacleLayer, obstacleDistance);
@@ -85,7 +144,7 @@ public class PlayerManager : MainBehaviour
         }
 
         RaycastHit2D hitDown = getRaycastForDiretion(Vector2.down, Constants.TileLayer);
-        if (hitDown && hitDown.transform)
+        if (hitDown && hitDown.transform && !IsOnPlatform)
         {
             Tile tile = hitDown.transform.GetComponent<Tile>();
             float heigh = Mathf.Floor(hitDown.distance);
