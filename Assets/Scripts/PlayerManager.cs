@@ -36,18 +36,18 @@ public class PlayerManager : MonoBehaviour
         if (hitForward && hitForward.transform)
         {
             Obstacle obstacle = hitForward.transform.GetComponent<Obstacle>();
-            if (obstacle && obstacle.type == Obstacle.obstacleType.jump)
+            if (obstacle && obstacle.type == obstacleType.jump)
             {
                 JumpUp();
             }
 
-            if (obstacle && obstacle.type == Obstacle.obstacleType.kill)
+            if (obstacle && obstacle.type == obstacleType.kill)
             {
                 MainModel.GameManager.OnGameOver?.Invoke();
                 Debug.Log("Game Over");
             }
 
-            if (obstacle && obstacle.type == Obstacle.obstacleType.trampoline)
+            if (obstacle && obstacle.type == obstacleType.trampoline)
             {
                 Debug.Log("Big Jump");
                 IsJumping = true;

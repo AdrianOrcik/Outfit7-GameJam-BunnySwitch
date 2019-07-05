@@ -3,12 +3,6 @@ using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
 
-public enum LayerTransform
-{
-    classic,
-    upDown
-}
-
 public class LayerManager : MainBehaviour
 {
     public LayerTransform LayerTransform = LayerTransform.classic;
