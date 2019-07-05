@@ -23,11 +23,13 @@ public class GameManager : MainBehaviour
     {
         IsPlaying = false;
         ScreenManager.GetScreen<GameOverScreen>().gameObject.SetActive(true);
+        GameObject.Find("Player").GetComponent<Animator>().SetBool(Constants.PlayerRunAnimation, false);
     }
 
     private void StartGame()
     {
         IsPlaying = true;
+        GameObject.Find("Player").GetComponent<Animator>().SetBool(Constants.PlayerRunAnimation, true);
     }
 
     //TODO: Refactor for loadingManager

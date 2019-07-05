@@ -7,7 +7,7 @@ public class PlayerManager : MonoBehaviour
     public float playerSpeed = 5;
     public bool IsOnObstacle = false;
     public bool IsJumping = false;
-
+    public float obstacleDistance = 0.1f;
     public void JumpUp()
     {
         IsOnObstacle = true;
@@ -32,7 +32,7 @@ public class PlayerManager : MonoBehaviour
     {
         MoveRight();
 
-        RaycastHit2D hitForward = getRaycastForDiretion(Vector2.right, Constants.ObstacleLayer, 0.8f);
+        RaycastHit2D hitForward = getRaycastForDiretion(Vector2.right, Constants.ObstacleLayer, obstacleDistance);
         if (hitForward && hitForward.transform)
         {
             Obstacle obstacle = hitForward.transform.GetComponent<Obstacle>();
@@ -44,6 +44,7 @@ public class PlayerManager : MonoBehaviour
             if (obstacle && obstacle.type == obstacleType.kill)
             {
                 MainModel.GameManager.OnGameOver?.Invoke();
+                GameObject.Find("Player").GetComponent<Animator>().SetBool(Constants.PlayerDieObstacleAnimation, true);
                 Debug.Log("Game Over");
             }
 
@@ -77,6 +78,7 @@ public class PlayerManager : MonoBehaviour
                 JumpDown();
                 JumpDown();
                 MainModel.GameManager.OnGameOver?.Invoke();
+                GameObject.Find("Player").GetComponent<Animator>().SetBool(Constants.PlayerDieFallAnimation, true);
             }
         }
     }
