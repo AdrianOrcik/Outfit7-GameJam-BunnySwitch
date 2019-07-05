@@ -18,13 +18,25 @@ public class PlayerManager : MainBehaviour
     public void JumpUp()
     {
         IsOnObstacle = true;
-        transform.position = new Vector2(transform.position.x, transform.position.y + 1);
+
+        Vector3 bounceUp = new Vector3(0f, 3f, 0);
+        Vector3 finalBounceUp = new Vector3(0f, 2f, 0);
+        float defaultYpos = transform.position.y;
+
+        Sequence mySequence = DOTween.Sequence();
+        mySequence.Append(transform.DOMoveY(defaultYpos + bounceUp.y, Constants.PLAYER_TRAMPOLINE_JUMP_UP_TIME)
+            .SetEase(Ease.OutExpo));
+        mySequence.Append(transform.DOMoveY(defaultYpos + finalBounceUp.y, Constants.PLAYER_TRAMPOLINE_JUMP_DOWN_TIME)
+            .SetEase(Ease.InExpo));
     }
 
     public void JumpDown()
     {
-        transform.position = new Vector2(transform.position.x, transform.position.y - 1);
         IsOnObstacle = false;
+
+        Sequence mySequence = DOTween.Sequence();
+        mySequence.Append(transform.DOMoveY(transform.position.y - 1, Constants.PLAYER_TRAMPOLINE_JUMP_DOWN_TIME)
+            .SetEase(Ease.OutExpo));
     }
 
     public void MoveRight()
@@ -34,7 +46,6 @@ public class PlayerManager : MainBehaviour
             transform.Translate(Vector3.right * Time.deltaTime * playerSpeed);
         }
     }
-
 
     void Update()
     {
@@ -61,7 +72,7 @@ public class PlayerManager : MainBehaviour
                 Debug.Log("Big Jump");
                 IsJumping = true;
                 JumpUp();
-                
+
                 RaycastHit2D hitFloatingPLatform = getRaycastForDiretion(Vector2.right, Constants.TileLayer, 2.0f);
                 if (hitFloatingPLatform && hitFloatingPLatform.transform)
                 {
@@ -85,11 +96,12 @@ public class PlayerManager : MainBehaviour
                 {
                     JumpDown();
                 }
+
                 IsJumping = false;
                 IsOnPlatform = false;
             }
         }
-        else if(MainModel.GameManager.IsPlaying && !IsOnPlatform)
+        else if (MainModel.GameManager.IsPlaying && !IsOnPlatform && !IsJumping)
         {
             Debug.Log("fall down");
             JumpDown();
@@ -112,6 +124,7 @@ public class PlayerManager : MainBehaviour
         {
             startPoint.x = startPoint.x - 0.5f;
         }
+
         if (distance == -1)
         {
             rayVector = transform.TransformDirection(direction);

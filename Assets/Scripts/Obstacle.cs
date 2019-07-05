@@ -22,14 +22,16 @@ public class Obstacle : Interactable
 
     private IEnumerator ObstacleBounceRoutine()
     {
-        yield return new WaitForSeconds(Constants.PLAYER_BOUCE_WAIT_TIME);
+        yield return new WaitForSeconds(Constants.OBSTACLE_BOUCE_WAIT_TIME);
         Vector3 bounceUp = new Vector3(0f, 0.2f, 0);
         float defaultYPos = transform.position.y;
 
         Sequence mySequence = DOTween.Sequence();
-        mySequence.Append(transform.DOMoveY(transform.position.y + bounceUp.y, Constants.PLAYER_BOUCE_UP_TIME)
+        mySequence.Append(transform.DOMoveY(transform.position.y + bounceUp.y, Constants.OBSTACLE_BOUCE_UP_TIME)
             .SetEase(Ease.OutBack));
-        mySequence.Append(transform.DOMoveY(defaultYPos, Constants.PLAYER_BOUCE_DOWN_TIME)
+        mySequence.Append(transform.DOMoveY(defaultYPos, Constants.OBSTACLE_BOUCE_DOWN_TIME)
             .SetEase(Ease.InExpo));
     }
+    
+    
 }
