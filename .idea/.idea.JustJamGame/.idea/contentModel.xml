@@ -38,10 +38,12 @@
               <e p="MainModel.cs" t="Include" />
             </e>
             <e p="ScreenArchitecture" t="Include">
+              <e p="CreditsScreen.cs" t="Include" />
               <e p="GameOverScreen.cs" t="Include" />
+              <e p="GameScreen.cs" t="Include" />
+              <e p="IntroScreen.cs" t="Include" />
               <e p="ScreenBehaviour.cs" t="Include" />
               <e p="ScreenManager.cs" t="Include" />
-              <e p="StartScreen.cs" t="Include" />
             </e>
           </e>
           <e p="EmptyTile.cs" t="Include" />

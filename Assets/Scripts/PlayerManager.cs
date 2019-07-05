@@ -51,6 +51,20 @@ public class PlayerManager : MainBehaviour
         }
     }
 
+    public IEnumerator FallDown()
+    {
+        Sequence mySequence = DOTween.Sequence();
+        mySequence.Append(transform
+            .DOMoveX(transform.position.x + 0.1f, 0.5f)
+            .SetEase(Ease.OutExpo));
+
+        yield return new WaitForSeconds(0.5f);
+
+        mySequence.Append(transform
+            .DOMoveY(transform.position.y - 2, 1f)
+            .SetEase(Ease.OutExpo));
+    }
+
     public void MoveRight()
     {
         if (MainModel.GameManager.IsPlaying)
@@ -61,7 +75,7 @@ public class PlayerManager : MainBehaviour
 
     private float interectableDistance = 0.5f;
     private float tileDistance = 1f;
-    private float EmptyTileDistance = 1.5f;
+    private float EmptyTileDistance = 1.2f;
 
     void Update()
     {
@@ -78,12 +92,12 @@ public class PlayerManager : MainBehaviour
                 switch (interactable.ObstacleType)
                 {
                     case ObstacleType.trampoline:
-                        interactable.gameObject.transform.GetChild(0).GetComponent<Animator>().SetBool(Constants.MushroomBounce, true);
+                        interactable.gameObject.transform.GetChild(0).GetComponent<Animator>()
+                            .SetBool(Constants.MushroomBounce, true);
                         JumpUp();
                         break;
                     case ObstacleType.kill:
-                        Debug.Log("Kill");
-                        MainModel.GameManager.IsPlaying = false;
+                        MainModel.GameManager.OnGameOver?.Invoke();
                         Animator.SetBool(Constants.PlayerDieObstacleAnimation, true);
                         break;
                     case ObstacleType.jump:
@@ -105,19 +119,19 @@ public class PlayerManager : MainBehaviour
                 JumpDown();
             }
         }
-        
+
         RaycastHit2D hitEmpty = Physics2D.Raycast(CharacterTransform.position, Vector2.down);
         Debug.DrawRay(CharacterTransform.position, Vector2.down, Color.red);
         if (hitEmpty.collider != null && hitEmpty.collider.GetComponent<EmptyTile>())
         {
-            //Debug.Log("fall test");
             EmptyTile tile = hitEmpty.collider.GetComponent<EmptyTile>();
-            //Debug.Log(Vector3.Distance(tile.gameObject.transform.position, CharacterTransform.position));
             if (Vector3.Distance(tile.gameObject.transform.position, CharacterTransform.position) <
                 EmptyTileDistance)
             {
+             
+                MainModel.GameManager.OnGameOver?.Invoke();
+                StartCoroutine(FallDown());
                 Animator.SetBool(Constants.PlayerDieFallAnimation, true);
-               Debug.Log("fall");
             }
         }
     }
