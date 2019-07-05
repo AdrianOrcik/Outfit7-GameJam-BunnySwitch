@@ -44,6 +44,7 @@ public class PlayerManager : MonoBehaviour
             if (obstacle && obstacle.type == obstacleType.kill)
             {
                 MainModel.GameManager.OnGameOver?.Invoke();
+                GameObject.Find("Player").GetComponent<Animator>().SetBool(Constants.PlayerDieObstacleAnimation, true);
                 Debug.Log("Game Over");
             }
 
@@ -77,6 +78,7 @@ public class PlayerManager : MonoBehaviour
                 JumpDown();
                 JumpDown();
                 MainModel.GameManager.OnGameOver?.Invoke();
+                GameObject.Find("Player").GetComponent<Animator>().SetBool(Constants.PlayerDieFallAnimation, true);
             }
         }
     }
