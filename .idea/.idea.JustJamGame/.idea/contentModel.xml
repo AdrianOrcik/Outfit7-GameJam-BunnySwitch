@@ -50,6 +50,7 @@
           </e>
           <e p="Interactable.cs" t="Include" />
           <e p="Layer.cs" t="Include" />
+          <e p="LayerBlock.cs" t="Include" />
           <e p="LayerManager.cs" t="Include" />
           <e p="LayerTransform.cs" t="Include" />
           <e p="Obstacle.cs" t="Include" />

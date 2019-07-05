@@ -1,18 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b3cab661-bbf9-4cf9-8fdc-57e136c4d344" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/LayerTransform.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/LayerTransform.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/obstacleType.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/obstacleType.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.JustJamGame/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.JustJamGame/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.JustJamGame/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.JustJamGame/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/LayerPrototype.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/LayerPrototype.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/LayerManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/LayerManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Obstacle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Obstacle.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerManager.cs" afterDir="false" />
-    </list>
+    <list default="true" id="b3cab661-bbf9-4cf9-8fdc-57e136c4d344" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,28 +19,28 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="cs" value="32" />
+          <entry key="cs" value="35" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="C#" value="32" />
+          <entry key="C#" value="35" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="cs" value="5419" />
+          <entry key="cs" value="6059" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="C#" value="5419" />
+          <entry key="C#" value="6059" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.55172414">
+    <splitter split-orientation="horizontal" split-proportion="0.43223444">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="false">
@@ -67,11 +56,11 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/Assets/Scripts/PlayerManager.cs">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="432">
-                  <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
+                <state relative-caret-position="390">
+                  <caret line="86" selection-start-line="86" selection-end-line="86" />
                   <folding>
                     <marker date="1562308349460" expanded="false" signature="6:78" ph="..." />
                     <marker date="1562308349460" expanded="true" signature="122:3090" ph="{...}" />
@@ -129,22 +118,35 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/Assets/Scripts/LayerManager.cs">
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/Assets/Scripts/LayerBlock.cs">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="352">
-                  <caret line="25" selection-start-line="25" selection-end-line="25" />
+                <state relative-caret-position="176">
+                  <caret line="11" column="33" selection-start-line="11" selection-start-column="33" selection-end-line="11" selection-end-column="33" />
                   <folding>
-                    <marker date="1562308380801" expanded="false" signature="6:97" ph="..." />
-                    <marker date="1562308380801" expanded="true" signature="140:2402" ph="{...}" />
-                    <marker date="1562308380801" expanded="true" signature="277:402" ph="{...}" />
-                    <marker date="1562308380801" expanded="true" signature="435:622" ph="{...}" />
-                    <marker date="1562308380801" expanded="true" signature="473:538" ph="{...}" />
-                    <marker date="1562308380801" expanded="true" signature="551:616" ph="{...}" />
-                    <marker date="1562308380801" expanded="true" signature="704:1182" ph="{...}" />
-                    <marker date="1562308380801" expanded="true" signature="916:1176" ph="{...}" />
-                    <marker date="1562308380801" expanded="true" signature="1251:1698" ph="{...}" />
-                    <marker date="1562308380801" expanded="true" signature="1766:2400" ph="{...}" />
+                    <marker date="1562312525187" expanded="true" signature="6:97" ph="..." />
+                    <marker date="1562312525187" expanded="true" signature="138:2367" ph="{...}" />
+                    <marker date="1562312525187" expanded="true" signature="208:376" ph="{...}" />
+                    <marker date="1562312525187" expanded="true" signature="297:370" ph="{...}" />
+                    <marker date="1562312525187" expanded="true" signature="409:596" ph="{...}" />
+                    <marker date="1562312525187" expanded="true" signature="447:512" ph="{...}" />
+                    <marker date="1562312525187" expanded="true" signature="525:590" ph="{...}" />
+                    <marker date="1562312525187" expanded="true" signature="678:912" ph="{...}" />
+                    <marker date="1562312525187" expanded="true" signature="981:1544" ph="{...}" />
+                    <marker date="1562312525187" expanded="true" signature="1612:2365" ph="{...}" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/Assets/Scripts/Core/GameArchitecture/Constants.cs">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="144">
+                  <caret line="11" column="24" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
+                  <folding>
+                    <marker date="1562311291440" expanded="false" signature="6:78" ph="..." />
+                    <marker date="1562311291440" expanded="true" signature="109:775" ph="{...}" />
                   </folding>
                 </state>
               </provider>
@@ -252,6 +254,24 @@
               </provider>
             </entry>
           </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/Assets/Scripts/LayerManager.cs">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="480">
+                  <caret line="30" column="36" lean-forward="true" selection-start-line="30" selection-start-column="36" selection-end-line="30" selection-end-column="36" />
+                  <folding>
+                    <marker date="1562312329581" expanded="true" signature="6:116" ph="..." />
+                    <marker date="1562312329581" expanded="true" signature="159:1093" ph="{...}" />
+                    <marker date="1562312329581" expanded="true" signature="280:482" ph="{...}" />
+                    <marker date="1562312329581" expanded="true" signature="425:476" ph="{...}" />
+                    <marker date="1562312329581" expanded="true" signature="517:931" ph="{...}" />
+                    <marker date="1562312329581" expanded="true" signature="964:1091" ph="{...}" />
+                    <marker date="1562312329581" expanded="true" signature="1025:1085" ph="{...}" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/Assets/Scripts/Core/GameArchitecture/InputBase.cs">
               <provider selected="true" editor-type-id="text-editor">
@@ -267,11 +287,11 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/Assets/Scripts/Core/GameArchitecture/InputMouse.cs">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="416">
-                  <caret line="28" column="13" lean-forward="true" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
+                <state relative-caret-position="528">
+                  <caret line="35" column="9" selection-start-line="35" selection-start-column="9" selection-end-line="35" selection-end-column="9" />
                   <folding>
                     <marker date="1562278887394" expanded="false" signature="6:78" ph="..." />
                     <marker date="1562278887394" expanded="true" signature="115:874" ph="{...}" />
@@ -304,6 +324,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/EmptyTile.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Enums/SubScreens.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Core/GameArchitecture/InputBase.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Core/GameArchitecture/InputDevice.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Core/GameArchitecture/InputManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player.cs" root0="FORCE_HIGHLIGHTING" />
@@ -314,7 +335,9 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Tile.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Layer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/LayerBlock.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/LayerManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Core/GameArchitecture/Constants.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -337,12 +360,14 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Core/ScreenArchitecture/ScreenBehaviour.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Core/ScreenArchitecture/StartScreen.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Core/GameArchitecture/InputBase.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/LayerManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Core/GameArchitecture/InputMouse.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Core/GameArchitecture/InputManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Core/GameArchitecture/InputDevice.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Obstacle.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/PlayerManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Core/GameArchitecture/Constants.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/LayerManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/LayerBlock.cs" />
       </list>
     </option>
   </component>
@@ -377,7 +402,7 @@
   <component name="PropertiesComponent">
     <property name="Rider.DefaultBreakpoints.AreToggled" value="true" />
     <property name="Rider.ProjectViewActivator.IsNotFirstRun" value="true" />
-    <property name="SearchEverywhereHistoryKey" value="inpu&#9;FILE&#9;file:///Users/adrianorcik/wkspaces/JustJamGame/Assets/Scripts/Core/GameArchitecture/InputManager.cs&#10;in&#9;FILE&#9;file:///Users/adrianorcik/wkspaces/JustJamGame/Assets/Scripts/Core/GameArchitecture/InputDevice.cs&#10;input&#9;null&#9;null&#10;layer&#9;FILE&#9;file:///Users/adrianorcik/wkspaces/JustJamGame/Assets/Scripts/LayerManager.cs&#10;game&#9;FILE&#9;file:///Users/adrianorcik/wkspaces/JustJamGame/Assets/Scripts/Core/GameArchitecture/GameManager.cs&#10;player&#9;FILE&#9;file:///Users/adrianorcik/wkspaces/JustJamGame/Assets/Scripts/PlayerManager.cs&#10;pla&#9;FILE&#9;file:///Users/adrianorcik/wkspaces/JustJamGame/Assets/Scripts/Player.cs&#10;scre&#9;null&#9;null&#10;main&#9;FILE&#9;file:///Users/adrianorcik/wkspaces/JustJamGame/Assets/Scripts/Core/GameArchitecture/MainBehaviour.cs&#10;cam&#9;FILE&#9;file:///Users/adrianorcik/wkspaces/JustJamGame/Assets/Scripts/Core/CameraManager.cs&#10;inter&#9;FILE&#9;file:///Users/adrianorcik/wkspaces/JustJamGame/Assets/Scripts/Interactable.cs&#10;play&#9;FILE&#9;file:///Users/adrianorcik/wkspaces/JustJamGame/Assets/Scripts/PlayerManager.cs&#10;const&#9;FILE&#9;file:///Users/adrianorcik/wkspaces/JustJamGame/Assets/Scripts/Core/Constants.cs&#10;Obs&#9;FILE&#9;file:///Users/adrianorcik/wkspaces/JustJamGame/Assets/Scripts/Obstacle.cs&#10;cons&#9;FILE&#9;file:///Users/adrianorcik/wkspaces/JustJamGame/Assets/Scripts/Core/Constants.cs&#10;con&#9;FILE&#9;file:///Users/adrianorcik/wkspaces/JustJamGame/Assets/Scripts/Core/Constants.cs&#10;tile&#9;FILE&#9;file:///Users/adrianorcik/wkspaces/JustJamGame/Assets/Scripts/Tile.cs&#10;mainmo&#9;FILE&#9;file:///Users/adrianorcik/wkspaces/JustJamGame/Assets/Scripts/Core/MainModel.cs" />
+    <property name="SearchEverywhereHistoryKey" value="cons&#9;null&#9;null&#10;inpu&#9;FILE&#9;file:///Users/adrianorcik/wkspaces/JustJamGame/Assets/Scripts/Core/GameArchitecture/InputManager.cs&#10;in&#9;FILE&#9;file:///Users/adrianorcik/wkspaces/JustJamGame/Assets/Scripts/Core/GameArchitecture/InputDevice.cs&#10;input&#9;null&#9;null&#10;layer&#9;FILE&#9;file:///Users/adrianorcik/wkspaces/JustJamGame/Assets/Scripts/LayerManager.cs&#10;game&#9;FILE&#9;file:///Users/adrianorcik/wkspaces/JustJamGame/Assets/Scripts/Core/GameArchitecture/GameManager.cs&#10;player&#9;FILE&#9;file:///Users/adrianorcik/wkspaces/JustJamGame/Assets/Scripts/PlayerManager.cs&#10;pla&#9;FILE&#9;file:///Users/adrianorcik/wkspaces/JustJamGame/Assets/Scripts/Player.cs&#10;scre&#9;null&#9;null&#10;main&#9;FILE&#9;file:///Users/adrianorcik/wkspaces/JustJamGame/Assets/Scripts/Core/GameArchitecture/MainBehaviour.cs&#10;cam&#9;FILE&#9;file:///Users/adrianorcik/wkspaces/JustJamGame/Assets/Scripts/Core/CameraManager.cs&#10;inter&#9;FILE&#9;file:///Users/adrianorcik/wkspaces/JustJamGame/Assets/Scripts/Interactable.cs&#10;play&#9;FILE&#9;file:///Users/adrianorcik/wkspaces/JustJamGame/Assets/Scripts/PlayerManager.cs&#10;const&#9;FILE&#9;file:///Users/adrianorcik/wkspaces/JustJamGame/Assets/Scripts/Core/Constants.cs&#10;Obs&#9;FILE&#9;file:///Users/adrianorcik/wkspaces/JustJamGame/Assets/Scripts/Obstacle.cs&#10;con&#9;FILE&#9;file:///Users/adrianorcik/wkspaces/JustJamGame/Assets/Scripts/Core/Constants.cs&#10;tile&#9;FILE&#9;file:///Users/adrianorcik/wkspaces/JustJamGame/Assets/Scripts/Tile.cs&#10;mainmo&#9;FILE&#9;file:///Users/adrianorcik/wkspaces/JustJamGame/Assets/Scripts/Core/MainModel.cs" />
     <property name="WebServerToolWindowFactoryState" value="false" />
   </component>
   <component name="RunDashboard">
@@ -419,12 +444,12 @@
       <option name="presentableId" value="Default" />
       <updated>1562247032963</updated>
       <workItem from="1562247040792" duration="344000" />
-      <workItem from="1562306072437" duration="2188000" />
+      <workItem from="1562306072437" duration="5561000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20159000" />
+    <option name="totallyTimeSpent" value="23532000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -479,59 +504,10 @@
           <properties exception="System.Threading.ThreadAbortException" displayValue="System.Threading.ThreadAbortException" />
           <option name="timeStamp" value="1" />
         </breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/Core/GameArchitecture/GameManager.cs</url>
-          <line>24</line>
-          <properties documentPath="$PROJECT_DIR$/Assets/Scripts/Core/GameArchitecture/GameManager.cs" initialLine="24">
-            <startOffsets>
-              <option value="463" />
-            </startOffsets>
-            <endOffsets>
-              <option value="532" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/Core/ScreenArchitecture/ScreenManager.cs</url>
-          <line>8</line>
-          <properties documentPath="$PROJECT_DIR$/Assets/Scripts/Core/ScreenArchitecture/ScreenManager.cs" initialLine="8">
-            <startOffsets>
-              <option value="193" />
-            </startOffsets>
-            <endOffsets>
-              <option value="227" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/Core/ScreenArchitecture/ScreenManager.cs</url>
-          <line>12</line>
-          <properties documentPath="$PROJECT_DIR$/Assets/Scripts/Core/ScreenArchitecture/ScreenManager.cs" initialLine="12">
-            <startOffsets>
-              <option value="304" />
-            </startOffsets>
-            <endOffsets>
-              <option value="330" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/Core/GameArchitecture/InputManager.cs</url>
-          <line>21</line>
-          <properties documentPath="$PROJECT_DIR$/Assets/Scripts/Core/GameArchitecture/InputManager.cs" initialLine="21">
-            <startOffsets>
-              <option value="414" />
-            </startOffsets>
-            <endOffsets>
-              <option value="450" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
       </breakpoints>
+      <breakpoints-dialog>
+        <breakpoints-dialog />
+      </breakpoints-dialog>
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -706,25 +682,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/LayerManager.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="25" selection-start-line="25" selection-end-line="25" />
-          <folding>
-            <marker date="1562308380801" expanded="false" signature="6:97" ph="..." />
-            <marker date="1562308380801" expanded="true" signature="140:2402" ph="{...}" />
-            <marker date="1562308380801" expanded="true" signature="277:402" ph="{...}" />
-            <marker date="1562308380801" expanded="true" signature="435:622" ph="{...}" />
-            <marker date="1562308380801" expanded="true" signature="473:538" ph="{...}" />
-            <marker date="1562308380801" expanded="true" signature="551:616" ph="{...}" />
-            <marker date="1562308380801" expanded="true" signature="704:1182" ph="{...}" />
-            <marker date="1562308380801" expanded="true" signature="916:1176" ph="{...}" />
-            <marker date="1562308380801" expanded="true" signature="1251:1698" ph="{...}" />
-            <marker date="1562308380801" expanded="true" signature="1766:2400" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/Core/GameArchitecture/InputManager.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="192">
@@ -750,28 +707,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Core/GameArchitecture/InputMouse.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
-          <caret line="28" column="13" lean-forward="true" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
-          <folding>
-            <marker date="1562278887394" expanded="false" signature="6:78" ph="..." />
-            <marker date="1562278887394" expanded="true" signature="115:874" ph="{...}" />
-            <marker date="1562278887394" expanded="true" signature="162:872" ph="{...}" />
-            <marker date="1562278887394" expanded="true" signature="209:271" ph="{...}" />
-            <marker date="1562278887394" expanded="true" signature="315:866" ph="{...}" />
-            <marker date="1562278887394" expanded="true" signature="450:745" ph="{...}" />
-            <marker date="1562278887394" expanded="true" signature="518:595" ph="{...}" />
-            <marker date="1562278887394" expanded="true" signature="616:695" ph="{...}" />
-            <marker date="1562278887394" expanded="true" signature="762:824" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/PlayerManager.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
+        <state relative-caret-position="390">
+          <caret line="86" selection-start-line="86" selection-end-line="86" />
           <folding>
             <marker date="1562308349460" expanded="false" signature="6:78" ph="..." />
             <marker date="1562308349460" expanded="true" signature="122:3090" ph="{...}" />
@@ -791,6 +730,70 @@
             <marker date="1562308349460" expanded="true" signature="2507:3088" ph="{...}" />
             <marker date="1562308349460" expanded="true" signature="2644:2803" ph="{...}" />
             <marker date="1562308349460" expanded="true" signature="2816:2996" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Core/GameArchitecture/InputMouse.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="528">
+          <caret line="35" column="9" selection-start-line="35" selection-start-column="9" selection-end-line="35" selection-end-column="9" />
+          <folding>
+            <marker date="1562278887394" expanded="false" signature="6:78" ph="..." />
+            <marker date="1562278887394" expanded="true" signature="115:874" ph="{...}" />
+            <marker date="1562278887394" expanded="true" signature="162:872" ph="{...}" />
+            <marker date="1562278887394" expanded="true" signature="209:271" ph="{...}" />
+            <marker date="1562278887394" expanded="true" signature="315:866" ph="{...}" />
+            <marker date="1562278887394" expanded="true" signature="450:745" ph="{...}" />
+            <marker date="1562278887394" expanded="true" signature="518:595" ph="{...}" />
+            <marker date="1562278887394" expanded="true" signature="616:695" ph="{...}" />
+            <marker date="1562278887394" expanded="true" signature="762:824" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Core/GameArchitecture/Constants.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="11" column="24" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
+          <folding>
+            <marker date="1562311291440" expanded="false" signature="6:78" ph="..." />
+            <marker date="1562311291440" expanded="true" signature="109:775" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/LayerBlock.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="11" column="33" selection-start-line="11" selection-start-column="33" selection-end-line="11" selection-end-column="33" />
+          <folding>
+            <marker date="1562312525187" expanded="true" signature="6:97" ph="..." />
+            <marker date="1562312525187" expanded="true" signature="138:2367" ph="{...}" />
+            <marker date="1562312525187" expanded="true" signature="208:376" ph="{...}" />
+            <marker date="1562312525187" expanded="true" signature="297:370" ph="{...}" />
+            <marker date="1562312525187" expanded="true" signature="409:596" ph="{...}" />
+            <marker date="1562312525187" expanded="true" signature="447:512" ph="{...}" />
+            <marker date="1562312525187" expanded="true" signature="525:590" ph="{...}" />
+            <marker date="1562312525187" expanded="true" signature="678:912" ph="{...}" />
+            <marker date="1562312525187" expanded="true" signature="981:1544" ph="{...}" />
+            <marker date="1562312525187" expanded="true" signature="1612:2365" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/LayerManager.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="30" column="36" lean-forward="true" selection-start-line="30" selection-start-column="36" selection-end-line="30" selection-end-column="36" />
+          <folding>
+            <marker date="1562312329581" expanded="true" signature="6:116" ph="..." />
+            <marker date="1562312329581" expanded="true" signature="159:1093" ph="{...}" />
+            <marker date="1562312329581" expanded="true" signature="280:482" ph="{...}" />
+            <marker date="1562312329581" expanded="true" signature="425:476" ph="{...}" />
+            <marker date="1562312329581" expanded="true" signature="517:931" ph="{...}" />
+            <marker date="1562312329581" expanded="true" signature="964:1091" ph="{...}" />
+            <marker date="1562312329581" expanded="true" signature="1025:1085" ph="{...}" />
           </folding>
         </state>
       </provider>
