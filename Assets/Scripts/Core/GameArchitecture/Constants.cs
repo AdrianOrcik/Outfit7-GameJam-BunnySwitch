@@ -4,6 +4,8 @@ using UnityEngine;
 
 public static class Constants
 {
+    public static int LAYER_WIDTH = 6;
+
     public static float DEACTIVE_LAYER_ALPHA = 0.2f;
     public static float ACTIVE_LAYER_ALPHA = 1f;
 
