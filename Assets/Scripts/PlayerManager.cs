@@ -4,18 +4,17 @@ using UnityEngine;
 
 public class PlayerManager : MonoBehaviour
 {
-    //public Player player;
     public float playerSpeed = 5;
-    public float jumpForce = 20;
     public bool IsOnObstacle = false;
+    public bool IsJumping = false;
 
-    public void MoveUp()
+    public void JumpUp()
     {
         IsOnObstacle = true;
         transform.position = new Vector2(transform.position.x, transform.position.y + 1);
     }
 
-    public void MoveDown()
+    public void JumpDown()
     {
         transform.position = new Vector2(transform.position.x, transform.position.y - 1);
         IsOnObstacle = false;
@@ -23,60 +22,81 @@ public class PlayerManager : MonoBehaviour
 
     public void MoveRight()
     {
-        //MOVING
-        transform.Translate(Vector3.right * playerSpeed * Time.deltaTime);
+        if (MainModel.GameManager.IsPlaying)
+        {
+            transform.Translate(Vector3.right * Time.deltaTime * playerSpeed);
+        }
     }
 
     void Update()
     {
-        if (MainModel.GameManager.IsPlaying)
-        {
-            MoveRight();
-        }
+        MoveRight();
 
-        Vector2 right = transform.TransformDirection(Vector2.right) * 0.8f;
-        Debug.DrawRay(transform.position, right, Color.red);
-
-        int obstacle_mask = (LayerMask.GetMask("Obstacle"));
-        RaycastHit2D hitForward = Physics2D.Raycast(transform.position, Vector2.right, 0.8f, obstacle_mask);
+        RaycastHit2D hitForward = getRaycastForDiretion(Vector2.right, Constants.ObstacleLayer, 0.8f);
         if (hitForward && hitForward.transform)
         {
             Obstacle obstacle = hitForward.transform.GetComponent<Obstacle>();
-            if (obstacle)
+            if (obstacle && obstacle.type == Obstacle.obstacleType.jump)
             {
-                MoveUp();
+                JumpUp();
+            }
+
+            if (obstacle && obstacle.type == Obstacle.obstacleType.kill)
+            {
+                Debug.Log("Game Over");
+            }
+
+            if (obstacle && obstacle.type == Obstacle.obstacleType.trampoline)
+            {
+                Debug.Log("Big Jump");
+                IsJumping = true;
+                JumpUp();
             }
         }
 
-        Vector2 down = Vector2.down;
-        Debug.DrawRay(transform.position, down, Color.red);
-
-        int tile_mask = (LayerMask.GetMask("Tile"));
-        RaycastHit2D hitDown = Physics2D.Raycast(transform.position, down, tile_mask);
+        RaycastHit2D hitDown = getRaycastForDiretion(Vector2.down, Constants.TileLayer);
         if (hitDown && hitDown.transform)
         {
             Tile tile = hitDown.transform.GetComponent<Tile>();
-            if (tile && IsOnObstacle)
+            if (tile && (IsOnObstacle || IsJumping))
             {
-                MoveDown();
+                JumpDown();
+                IsJumping = false;
             }
         }
 
-        Vector2 down_empty = Vector2.down * 10;
-        Debug.DrawRay(transform.position, down_empty, Color.red);
-
-        int empty_tile_mask = (LayerMask.GetMask("EmptyTile"));
-        RaycastHit2D hitDown_empty = Physics2D.Raycast(transform.position, down_empty, empty_tile_mask);
-        if (hitDown_empty && hitDown_empty.transform)
+        RaycastHit2D hitDown_empty = getRaycastForDiretion(Vector2.down, Constants.EmptyTileLayer);
+        if (hitDown_empty && hitDown_empty.transform && !IsJumping)
         {
             EmptyTile emptyTile = hitDown_empty.transform.GetComponent<EmptyTile>();
             if (emptyTile)
             {
-                MainModel.GameManager.OnGameOver?.Invoke();
-                MoveDown();
-                MoveDown();
-                MoveDown();
+                //TODO: generic 
+                JumpDown();
+                JumpDown();
+                JumpDown();
             }
         }
+    }
+
+    RaycastHit2D getRaycastForDiretion(Vector2 direction, string element, float distance = -1)
+    {
+        int mask = (LayerMask.GetMask(element));
+
+        RaycastHit2D hit;
+        Vector2 rayVector;
+        if (distance == -1)
+        {
+            rayVector = transform.TransformDirection(direction);
+            hit = Physics2D.Raycast(transform.position, rayVector, mask);
+        }
+        else
+        {
+            rayVector = transform.TransformDirection(direction) * distance;
+            hit = Physics2D.Raycast(transform.position, rayVector, distance, mask);
+        }
+
+        Debug.DrawRay(transform.position, rayVector, Color.red);
+        return hit;
     }
 }

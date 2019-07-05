@@ -17,4 +17,8 @@ public static class Constants
 
     public static int DEACTIVE_SORTING_LAYER = 10;
     public static int ACTIVE_SORTING_LAYER = 15;
+
+    public static string ObstacleLayer = "Obstacle";
+    public static string TileLayer = "Tile";
+    public static string EmptyTileLayer = "EmptyTile";
 }
