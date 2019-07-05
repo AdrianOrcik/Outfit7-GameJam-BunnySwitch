@@ -5,11 +5,19 @@ using TMPro;
 
 public class GameScreen : ScreenBehaviour
 {
+    public GameObject ReadyPanel;
+
     public TMP_Text GetReadyText;
+    public TMP_Text LevelScore;
 
     private void Start()
     {
         StartCoroutine(StartRoutine());
+    }
+
+    public void IncrementScore(int value)
+    {
+        LevelScore.text = value.ToString();
     }
 
     private IEnumerator StartRoutine()
@@ -23,6 +31,6 @@ public class GameScreen : ScreenBehaviour
         GetReadyText.text = string.Format("GO");
         MainModel.GameManager.OnStartGame?.Invoke();
         yield return new WaitForSeconds(Constants.FADE_OUT_READY_SCREEN_TIME);
-        ScreenManager.GetScreen<GameScreen>().gameObject.SetActive(false);
+        ReadyPanel.gameObject.SetActive(false);
     }
 }

@@ -9,6 +9,8 @@ public class GameManager : MainBehaviour
     public Action OnStartGame;
     public bool IsPlaying { get; set; }
     public PlayerManager PlayerManager { get; set; }
+    public int Score { get; set; }
+    private GameScreen GameScreen;
 
     private void Awake()
     {
@@ -41,6 +43,27 @@ public class GameManager : MainBehaviour
         IsPlaying = true;
         PlayerManager = FindObjectOfType<PlayerManager>();
         PlayerManager.Animator.SetBool(Constants.PlayerRunAnimation, true);
+        GameScreen = ScreenManager.GetScreen<GameScreen>();
+
+        StartCoroutine(IncreasingScore());
+    }
+
+    //Use for bonus increase of score
+    public void IncreaseScore(int value)
+    {
+        Score += value;
+        GameScreen.IncrementScore(Score);
+    }
+
+    //use for distance score increase
+    private IEnumerator IncreasingScore()
+    {
+        while (true)
+        {
+            Score += 10;
+            yield return new WaitForSeconds(0.5f);
+            GameScreen.IncrementScore(Score);
+        }
     }
 
     //TODO: Refactor for loadingManager

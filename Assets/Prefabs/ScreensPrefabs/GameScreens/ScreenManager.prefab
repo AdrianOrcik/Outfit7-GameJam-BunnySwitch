@@ -62,6 +62,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameScreen
       objectReference: {fileID: 0}
+    - target: {fileID: 3124734350442415292, guid: e76467ab235f7419bb5fbf71bd1215fa,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3124734350442415293, guid: e76467ab235f7419bb5fbf71bd1215fa,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -166,6 +171,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1207296233659557750, guid: e76467ab235f7419bb5fbf71bd1215fa,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1937477756815084990, guid: e76467ab235f7419bb5fbf71bd1215fa,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e76467ab235f7419bb5fbf71bd1215fa, type: 3}
