@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
@@ -23,4 +24,20 @@ public class Layer : MainBehaviour
             interactable.SetTransparent(toActive);
         }
     }
+
+//    public int GetYposition(Transform transform)
+//    {
+//        List<int> tilePositions
+//        foreach (Interactable interactable in Interactables)
+//        {
+//            Tile tile = interactable.GetComponent<Tile>();
+//            if (tile)
+//            {
+//                if (Math.Abs(transform.position.x - tile.position_X) < 0.2f)
+//                {
+//                    
+//                }
+//            }
+//        }
+//    }
 }
