@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerManager : MonoBehaviour
+public class PlayerManager : MainBehaviour
 {
     public float playerSpeed = 5;
     public bool IsOnObstacle = false;
     public bool IsJumping = false;
     public float obstacleDistance = 0.1f;
+
     public void JumpUp()
     {
         IsOnObstacle = true;
@@ -74,6 +75,8 @@ public class PlayerManager : MonoBehaviour
             if (emptyTile)
             {
                 //TODO: generic 
+
+                CameraManager.IsTargeting = false;
                 JumpDown();
                 JumpDown();
                 JumpDown();

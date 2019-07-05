@@ -5,16 +5,23 @@ using UnityEngine;
 //TODO: Camera lerp curve tween
 public class CameraManager : MainBehaviour
 {
-    public Transform Target;
+    public bool IsTargeting { get; set; }
 
+    public Transform Target;
     public float DampTime = 10f;
     public Vector3 CameraOffset;
 
     private float margin = 0.1f;
 
+
+    private void Start()
+    {
+        IsTargeting = true;
+    }
+
     void Update()
     {
-        if (Target)
+        if (Target && IsTargeting)
         {
             float targetX = Target.position.x + CameraOffset.x;
             float targetY = Target.position.y + CameraOffset.y;

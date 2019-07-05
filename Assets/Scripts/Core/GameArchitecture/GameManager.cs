@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -21,9 +22,16 @@ public class GameManager : MainBehaviour
 
     private void GameOver()
     {
+        StartCoroutine(GameOverRoutine());
+    }
+
+    private IEnumerator GameOverRoutine()
+    {
         IsPlaying = false;
-        ScreenManager.GetScreen<GameOverScreen>().gameObject.SetActive(true);
         GameObject.Find("Player").GetComponent<Animator>().SetBool(Constants.PlayerRunAnimation, false);
+
+        yield return new WaitForSeconds(1f);
+        ScreenManager.GetScreen<GameOverScreen>().gameObject.SetActive(true);
     }
 
     private void StartGame()
