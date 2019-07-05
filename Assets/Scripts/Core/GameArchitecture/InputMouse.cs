@@ -25,6 +25,7 @@ public class InputMouse : InputBase
                     OnSwipeDown?.Invoke();
                 }
 
+                Debug.Log("OnSwipe");
                 OnSwipe?.Invoke();
             }
             else

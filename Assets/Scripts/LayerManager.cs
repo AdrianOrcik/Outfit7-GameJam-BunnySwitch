@@ -24,6 +24,10 @@ public class LayerManager : MainBehaviour
                 SpawnLayerBlock(Random.Range(1, LayerBlocksGO.Length));
             }
         }
+
+#if !UNITY_EDITOR && ( UNITY_ANDROID || UNITY_IOS )
+          MainModel.GameManager.OnStartGame += OnChangeLayer;
+#endif
     }
 
     public void SpawnLayerBlock(int blockID)

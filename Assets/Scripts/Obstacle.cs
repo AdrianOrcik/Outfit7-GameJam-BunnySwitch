@@ -23,7 +23,7 @@ public class Obstacle : Interactable
     private IEnumerator ObstacleBounceRoutine()
     {
         yield return new WaitForSeconds(Constants.PLAYER_BOUCE_WAIT_TIME);
-        Vector3 bounceUp = new Vector3(0f, 0.1f, 0);
+        Vector3 bounceUp = new Vector3(0f, 0.2f, 0);
         float defaultYPos = transform.position.y;
 
         Sequence mySequence = DOTween.Sequence();
