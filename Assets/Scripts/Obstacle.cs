@@ -36,4 +36,18 @@ public class Obstacle : Interactable
         mySequence.Append(transform.DOMoveY(defaultYPos, Constants.OBSTACLE_BOUCE_DOWN_TIME)
             .SetEase(Ease.InExpo));
     }
+
+    public void Animate()
+    {
+        if (ObstacleType == ObstacleType.coin)
+        {
+            GameScreen gameScreen = ScreenManager.GetScreen<GameScreen>();
+            transform.DOMove(gameScreen.LevelScore.transform.position, 1f).SetEase(Ease.Linear);
+        }
+    }
+
+    public void Delete()
+    {
+        Destroy(gameObject);
+    }
 }

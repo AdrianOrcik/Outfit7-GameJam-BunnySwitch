@@ -94,7 +94,6 @@ public class GameManager : MainBehaviour
         }
     }
 
-
     //TODO: Refactor for loadingManager
     public void LoadScene(int id)
     {

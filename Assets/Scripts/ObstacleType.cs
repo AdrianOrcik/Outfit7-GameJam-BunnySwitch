@@ -3,5 +3,6 @@
     none,
     jump,
     kill,
-    trampoline
+    trampoline,
+    coin,
 };

@@ -473,6 +473,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 3865997563898812432, guid: f7b88d7ae1a114cb38fca8d224ec2876,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3940934821909180770, guid: f7b88d7ae1a114cb38fca8d224ec2876,
         type: 3}
       propertyPath: m_fontColor.r
@@ -508,6 +513,12 @@ PrefabInstance:
       propertyPath: m_firstOverflowCharacterIndex
       value: -1
       objectReference: {fileID: 0}
+    - target: {fileID: 3666137058160185896, guid: f7b88d7ae1a114cb38fca8d224ec2876,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c01d3be396f074cf7bddfd0497cebc6b,
+        type: 3}
     - target: {fileID: 3473546437133558304, guid: f7b88d7ae1a114cb38fca8d224ec2876,
         type: 3}
       propertyPath: m_IsActive

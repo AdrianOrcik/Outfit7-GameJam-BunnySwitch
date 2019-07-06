@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
-using UnityEditor.U2D;
 using UnityEngine;
 
 public class PlayerManager : MainBehaviour
@@ -147,6 +146,7 @@ public class PlayerManager : MainBehaviour
             if (Vector3.Distance(interactable.gameObject.transform.position, CharacterTransform.position) <
                 interectableDistance)
             {
+                Debug.Log("Interactable");
                 switch (interactable.ObstacleType)
                 {
                     case ObstacleType.trampoline:
@@ -160,6 +160,11 @@ public class PlayerManager : MainBehaviour
                         break;
                     case ObstacleType.jump:
                         Animator.SetBool(Constants.PlayerDieFallAnimation, true);
+                        break;
+                    case ObstacleType.coin:
+                        GameManager.IncreaseScore(100);
+                        Obstacle o = (Obstacle) interactable;
+                        o.Animate();
                         break;
                 }
             }
