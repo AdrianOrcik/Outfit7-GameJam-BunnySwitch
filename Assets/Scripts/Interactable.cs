@@ -11,6 +11,11 @@ public class Interactable : MainBehaviour
 
     public void SetTransparent(bool toActive)
     {
+//        if (BoxCollider2D == null)
+//        {
+//            BoxCollider2D = GetComponent<BoxCollider2D>();
+//        }
+
         if (toActive)
         {
             if (SpriteRenderer != null)

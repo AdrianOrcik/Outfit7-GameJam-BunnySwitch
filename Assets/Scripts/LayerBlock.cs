@@ -18,6 +18,15 @@ public class LayerBlock : MainBehaviour
 
     public void OnChangeLayer()
     {
+        if (Layers[0] == null || Layers[1] == null)
+        {
+            Layers = new List<Layer>();
+            foreach (Transform layer in transform)
+            {
+                Layers.Add(layer.GetComponent<Layer>());
+            }
+        }
+
         if (Layers[0].IsActive)
         {
             SwapLayer(Layers[0], Layers[1]);

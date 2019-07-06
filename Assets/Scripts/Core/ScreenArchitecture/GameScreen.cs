@@ -10,14 +10,21 @@ public class GameScreen : ScreenBehaviour
     public TMP_Text GetReadyText;
     public TMP_Text LevelScore;
 
-    private void Start()
+    private void OnEnable()
     {
         StartCoroutine(StartRoutine());
+        StartCoroutine(DisableRunCounter());
     }
 
     public void IncrementScore(int value)
     {
         LevelScore.text = value.ToString();
+    }
+
+    private IEnumerator DisableRunCounter()
+    {
+        yield return new WaitForSeconds(Constants.FADE_OUT_READY_SCREEN_TIME);
+        ReadyPanel.gameObject.SetActive(false);
     }
 
     private IEnumerator StartRoutine()
@@ -30,7 +37,5 @@ public class GameScreen : ScreenBehaviour
         yield return new WaitForSeconds(Constants.GET_READY_TIME);
         GetReadyText.text = string.Format("GO");
         MainModel.GameManager.OnStartGame?.Invoke();
-        yield return new WaitForSeconds(Constants.FADE_OUT_READY_SCREEN_TIME);
-        ReadyPanel.gameObject.SetActive(false);
     }
 }

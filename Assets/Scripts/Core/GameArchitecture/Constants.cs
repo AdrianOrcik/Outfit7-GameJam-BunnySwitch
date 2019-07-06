@@ -32,7 +32,7 @@ public static class Constants
     public static string PlayerJumpDown = "JumpDown";
 
     public static float GET_READY_TIME = 0.4f;
-    public static float FADE_OUT_READY_SCREEN_TIME = 0.2f;
+    public static float FADE_OUT_READY_SCREEN_TIME = 1.7f;
 
     public static float OBSTACLE_BOUCE_WAIT_TIME = 0.25f;
     public static float OBSTACLE_BOUCE_UP_TIME = 0.18f;
