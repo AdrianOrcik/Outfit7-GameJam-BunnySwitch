@@ -162,8 +162,8 @@ public class PlayerManager : MainBehaviour
                         Animator.SetBool(Constants.PlayerDieFallAnimation, true);
                         break;
                     case ObstacleType.coin:
-                        Debug.Log("coin pick");
-                        GameManager.IncreaseScore(1);
+                        Destroy(interactable.gameObject);
+                        GameManager.IncreaseScore(100);
                         break;
                 }
             }
