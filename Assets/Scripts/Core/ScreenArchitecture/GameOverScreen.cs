@@ -10,6 +10,8 @@ public class GameOverScreen : ScreenBehaviour
     void Start()
     {
         ResetBtn.onClick.AddListener(OnResetBtn);
+        GameObject.Find("PlayScore").GetComponent<TMPro.TextMeshProUGUI>().text =
+            MainModel.GameManager.Score.ToString();
     }
 
     public void OnResetBtn()
