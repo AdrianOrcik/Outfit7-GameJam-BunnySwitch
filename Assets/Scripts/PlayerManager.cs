@@ -25,7 +25,7 @@ public class PlayerManager : MainBehaviour
         bool platform = false;
         RaycastHit2D hitPlatform = Physics2D.Raycast(CharacterTransform.position, new Vector2(3,2));
         Debug.DrawRay(CharacterTransform.position, new Vector2(3,2));
-        if (hitPlatform.collider != null && hitPlatform.collider.GetComponent<Obstacle>())
+        if (hitPlatform.collider != null && hitPlatform.collider.GetComponent<Tile>())
         {
             platform = true;
         }
