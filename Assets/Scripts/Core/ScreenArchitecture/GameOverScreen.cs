@@ -14,6 +14,7 @@ public class GameOverScreen : ScreenBehaviour
 
     public void OnResetBtn()
     {
+        MainModel.GameManager.OnRestartGame?.Invoke();
         MainModel.GameManager.LoadScene(1);
     }
 }

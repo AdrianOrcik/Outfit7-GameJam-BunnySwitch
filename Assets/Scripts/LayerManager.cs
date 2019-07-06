@@ -33,6 +33,7 @@ public class LayerManager : MainBehaviour
 
     public void SpawnLayerBlock(int blockID)
     {
+        Debug.Log("Spawned");
         LayerBlock layerBlock = Instantiate(LayerBlocksGO[blockID],
             new Vector3(Constants.LAYER_WIDTH * LayerBlocks.Count, 0, LayerBlocksGO[blockID].transform.position.z),
             Quaternion.identity);

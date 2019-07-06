@@ -14,6 +14,9 @@ public class GameManager : MainBehaviour
     public int Score { get; set; }
     private GameScreen GameScreen;
 
+    public bool InitScreenSeen = false;
+    private bool IsGameOver = false;
+
     private void Awake()
     {
         MainModel.GameManager = this;
@@ -29,17 +32,24 @@ public class GameManager : MainBehaviour
 
     private void GameOver()
     {
-        StartCoroutine(GameOverRoutine());
+        if (!IsGameOver)
+        {
+            StartCoroutine(GameOverRoutine());
+            IsGameOver = true;
+        }
     }
 
     private IEnumerator GameOverRoutine()
     {
+        Debug.Log("GameOver");
         IsPlaying = false;
         CameraManager.IsTargeting = false;
+
         //FindObjectOfType<PlayerManager>().Animator.SetBool(Constants.PlayerRunAnimation, false);
 
         yield return new WaitForSeconds(1f);
         ScreenManager.GetScreen<GameOverScreen>().gameObject.SetActive(true);
+        ScreenManager.GetScreen<GameScreen>().gameObject.SetActive(false);
     }
 
     private void StartGame()
@@ -54,6 +64,7 @@ public class GameManager : MainBehaviour
 
     private void RestartGame()
     {
+        IsGameOver = false;
         ScreenManager.GetScreen<GameOverScreen>().gameObject.SetActive(false);
         Score = 0;
     }
@@ -73,6 +84,8 @@ public class GameManager : MainBehaviour
             Score += 10;
             yield return new WaitForSeconds(0.5f);
             GameScreen.IncrementScore(Score);
+
+            if (IsGameOver) break;
         }
     }
 

@@ -121,7 +121,6 @@ public class PlayerManager : MainBehaviour
                         JumpUp();
                         break;
                     case ObstacleType.kill:
-
                         MainModel.GameManager.OnGameOver?.Invoke();
                         Animator.SetBool(Constants.PlayerDieObstacleAnimation, true);
                         break;
