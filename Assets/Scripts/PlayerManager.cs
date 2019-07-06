@@ -22,16 +22,17 @@ public class PlayerManager : MainBehaviour
         Vector3 finalBounceUp = new Vector3(0f, 2f, 0);
         float defaultYpos = transform.position.y;
 
-        bool platform = false;
-        RaycastHit2D hitPlatform = Physics2D.Raycast(CharacterTransform.position, new Vector2(3,2));
-        Debug.DrawRay(CharacterTransform.position, new Vector2(3,2));
-        if (hitPlatform.collider != null && hitPlatform.collider.GetComponent<Tile>())
-        {
-            platform = true;
-        }
-        
-        if (platform)
-        {
+//        bool platform = false;
+//        int mask = (LayerMask.GetMask(Constants.TileLayer));
+//        RaycastHit2D hitPlatform =  Physics2D.Raycast(CharacterTransform.position, new Vector2(3,2), mask);//= Physics2D.Raycast(CharacterTransform.position, new Vector2(3,2));
+//        Debug.DrawRay(CharacterTransform.position, new Vector2(3,2));
+//        if (hitPlatform.collider != null && hitPlatform.transform.GetComponent<Obstacle>())
+//        {
+//            platform = true;
+//        }
+//        
+//        if (platform)
+//        {
             Sequence mySequence = DOTween.Sequence();
             mySequence.Append(transform.DOMoveY(defaultYpos + bounceUp.y, Constants.PLAYER_TRAMPOLINE_JUMP_UP_TIME)
                 .SetEase(Ease.OutExpo));
@@ -45,24 +46,24 @@ public class PlayerManager : MainBehaviour
             Sequence animationSequence = DOTween.Sequence();
             animationSequence.AppendInterval(Constants.PLAYER_TRAMPOLINE_JUMP_UP_TIME)
                 .OnComplete(EndJumpUpAnimation);
-        }
-        else
-        {
-            Sequence mySequence = DOTween.Sequence();
-            mySequence.Append(transform.DOMoveY(defaultYpos + bounceUp.y, Constants.PLAYER_TRAMPOLINE_JUMP_UP_TIME)
-                .SetEase(Ease.OutExpo));
-            mySequence.Append(transform
-                .DOMoveY(defaultYpos + defaultYpos, Constants.PLAYER_TRAMPOLINE_JUMP_UP_TIME)
-                .SetEase(Ease.InExpo));
-            mySequence.AppendInterval(Constants.PLAYER_TRAMPOLINE_JUMP_UP_TIME +
-                                      Constants.PLAYER_TRAMPOLINE_JUMP_DOWN_LONG)
-                .OnComplete(OnJumpCompleted);
-            
-            Sequence animationSequence = DOTween.Sequence();
-            animationSequence.AppendInterval(Constants.PLAYER_TRAMPOLINE_JUMP_UP_TIME + Constants.PLAYER_TRAMPOLINE_JUMP_DOWN_LONG)
-                .OnComplete(EndJumpUpAnimation);
-            
-        }
+//        }
+//        else
+//        {
+//            Sequence mySequence = DOTween.Sequence();
+//            mySequence.Append(transform.DOMoveY(defaultYpos + bounceUp.y, Constants.PLAYER_TRAMPOLINE_JUMP_UP_TIME)
+//                .SetEase(Ease.OutExpo));
+//            mySequence.Append(transform
+//                .DOMoveY(defaultYpos + defaultYpos, Constants.PLAYER_TRAMPOLINE_JUMP_UP_TIME)
+//                .SetEase(Ease.InExpo));
+//            mySequence.AppendInterval(Constants.PLAYER_TRAMPOLINE_JUMP_UP_TIME +
+//                                      Constants.PLAYER_TRAMPOLINE_JUMP_DOWN_LONG)
+//                .OnComplete(OnJumpCompleted);
+//            
+//            Sequence animationSequence = DOTween.Sequence();
+//            animationSequence.AppendInterval(Constants.PLAYER_TRAMPOLINE_JUMP_UP_TIME + Constants.PLAYER_TRAMPOLINE_JUMP_DOWN_LONG)
+//                .OnComplete(EndJumpUpAnimation);
+//            
+//        }
 
         Animator.SetBool(Constants.PlayerJumpUp, true);
         IsJumping = true;
@@ -75,6 +76,7 @@ public class PlayerManager : MainBehaviour
 
     void EndJumpUpAnimation()
     {
+        IsJumping = false;
         Animator.SetBool(Constants.PlayerJumpUp, false);
     }
 
