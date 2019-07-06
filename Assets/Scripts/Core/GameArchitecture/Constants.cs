@@ -23,10 +23,13 @@ public static class Constants
     public static string ObstacleLayer = "Obstacle";
     public static string TileLayer = "Tile";
     public static string EmptyTileLayer = "EmptyTile";
+    public static string MushroomBounce = "Bounce";
 
     public static string PlayerRunAnimation = "Run";
     public static string PlayerDieObstacleAnimation = "DieObstacle";
     public static string PlayerDieFallAnimation = "DieFall";
+    public static string PlayerJumpUp = "JumpUp";
+    public static string PlayerJumpDown = "JumpDown";
 
     public static float GET_READY_TIME = 0.4f;
     public static float FADE_OUT_READY_SCREEN_TIME = 0.2f;
