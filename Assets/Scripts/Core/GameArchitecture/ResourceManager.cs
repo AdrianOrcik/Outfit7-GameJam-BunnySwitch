@@ -20,7 +20,10 @@ public enum PoolType
     Layerblock0 = 0,
     Layerblock1 = 1,
     Layerblock2 = 2,
-    Layerblock3 = 3
+    Layerblock3 = 3,
+    Layerblock4 = 4,
+    Layerblock5 = 5,
+    Layerblock6 = 6
 }
 
 public class ResourceManager : MainBehaviour

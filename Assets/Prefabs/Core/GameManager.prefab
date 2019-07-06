@@ -133,14 +133,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GameBlocks:
   - PoolType: 0
-    Amount: 5
+    Amount: 20
     Obj: {fileID: 2292668869217825436, guid: cf147f24c30fe4ae486dfcaa93b9162d, type: 3}
   - PoolType: 1
-    Amount: 5
-    Obj: {fileID: 2292668869217825436, guid: 56bd60bbeb3b1427c85f541ae9c09d0e, type: 3}
+    Amount: 20
+    Obj: {fileID: 2292668869217825436, guid: 599b9ee84d0d34bfb8f6637d80abb76a, type: 3}
   - PoolType: 2
-    Amount: 5
-    Obj: {fileID: 8949919965982183031, guid: 6ad8fda19f3cfe641b029b44e9def6dc, type: 3}
+    Amount: 20
+    Obj: {fileID: 8949919965982183031, guid: 92bd440a728c04a39a115de86d1b1642, type: 3}
   - PoolType: 3
-    Amount: 5
-    Obj: {fileID: 8949919965982183031, guid: 1cc3a1f054f8a422ca3ef23b3545cf67, type: 3}
+    Amount: 20
+    Obj: {fileID: 8949919965982183031, guid: 5f60c402437ab85459864a5741ca1d57, type: 3}
+  - PoolType: 4
+    Amount: 20
+    Obj: {fileID: 8949919965982183031, guid: c753e1dab2c6a854c90a52e7d0f292ab, type: 3}
+  - PoolType: 5
+    Amount: 20
+    Obj: {fileID: 8949919965982183031, guid: 2c5f98a0f80b3d147ad1e7d1fdbb134e, type: 3}
+  - PoolType: 6
+    Amount: 20
+    Obj: {fileID: 8949919965982183031, guid: 9d7c389344b45864d979ddd182e6571e, type: 3}
