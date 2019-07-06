@@ -39,6 +39,7 @@ public static class Constants
     public static float OBSTACLE_BOUCE_DOWN_TIME = 0.13f;
 
     public static float PLAYER_TRAMPOLINE_JUMP_UP_TIME = 0.5f;
+    public static float PLAYER_TRAMPOLINE_JUMP_DOWN_LONG = 0.5f;
     public static float PLAYER_TRAMPOLINE_JUMP_DOWN_TIME = 0.2f;
 
     public static float PARALLAX_BACKGROUD_WIDTH = 20f;
