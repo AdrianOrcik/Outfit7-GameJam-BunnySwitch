@@ -62,8 +62,7 @@ public class GameManager : MainBehaviour
         PlayerManager = FindObjectOfType<PlayerManager>();
         PlayerManager.Animator.SetBool(Constants.PlayerRunAnimation, true);
         GameScreen = ScreenManager.GetScreen<GameScreen>();
-
-        StartCoroutine(IncreasingScore());
+        
     }
 
     private void RestartGame()
@@ -80,20 +79,6 @@ public class GameManager : MainBehaviour
         Score += value;
         GameScreen.IncrementScore(Score);
     }
-
-    //use for distance score increase
-    private IEnumerator IncreasingScore()
-    {
-        while (true)
-        {
-            Score += 10;
-            yield return new WaitForSeconds(0.5f);
-            GameScreen.IncrementScore(Score);
-
-            if (IsGameOver) break;
-        }
-    }
-
 
     //TODO: Refactor for loadingManager
     public void LoadScene(int id)
