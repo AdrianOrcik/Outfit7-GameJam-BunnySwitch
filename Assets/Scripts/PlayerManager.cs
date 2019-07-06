@@ -34,19 +34,19 @@ public class PlayerManager : MainBehaviour
 //        
 //        if (platform)
 //        {
-            Sequence mySequence = DOTween.Sequence();
-            mySequence.Append(transform.DOMoveY(defaultYpos + bounceUp.y, Constants.PLAYER_TRAMPOLINE_JUMP_UP_TIME)
-                .SetEase(Ease.OutExpo));
-            mySequence.Append(transform
-                .DOMoveY(defaultYpos + finalBounceUp.y, Constants.PLAYER_TRAMPOLINE_JUMP_DOWN_TIME)
-                .SetEase(Ease.InExpo));
-            mySequence.AppendInterval(Constants.PLAYER_TRAMPOLINE_JUMP_UP_TIME +
-                                      Constants.PLAYER_TRAMPOLINE_JUMP_DOWN_TIME)
-                .OnComplete(OnJumpCompleted);
+        Sequence mySequence = DOTween.Sequence();
+        mySequence.Append(transform.DOMoveY(defaultYpos + bounceUp.y, Constants.PLAYER_TRAMPOLINE_JUMP_UP_TIME)
+            .SetEase(Ease.OutExpo));
+        mySequence.Append(transform
+            .DOMoveY(defaultYpos + finalBounceUp.y, Constants.PLAYER_TRAMPOLINE_JUMP_DOWN_TIME)
+            .SetEase(Ease.InExpo));
+        mySequence.AppendInterval(Constants.PLAYER_TRAMPOLINE_JUMP_UP_TIME +
+                                  Constants.PLAYER_TRAMPOLINE_JUMP_DOWN_TIME)
+            .OnComplete(OnJumpCompleted);
 
-            Sequence animationSequence = DOTween.Sequence();
-            animationSequence.AppendInterval(Constants.PLAYER_TRAMPOLINE_JUMP_UP_TIME)
-                .OnComplete(EndJumpUpAnimation);
+        Sequence animationSequence = DOTween.Sequence();
+        animationSequence.AppendInterval(Constants.PLAYER_TRAMPOLINE_JUMP_UP_TIME)
+            .OnComplete(EndJumpUpAnimation);
 //        }
 //        else
 //        {

@@ -21,7 +21,7 @@ public class LayerManager : MainBehaviour
     private void Start()
     {
         LayerBlocks = new List<LayerBlock>();
-        for (int i = 0; i < 3; i++)
+        for (int i = 0; i < 10; i++)
         {
             if (i == 0)
             {
@@ -41,10 +41,11 @@ public class LayerManager : MainBehaviour
 
     public void SpawnNextBlock()
     {
-        SpawnLayerBlock(Random.Range(1, ResourceManager.PoolDictionary.Count));
+        LayerBlock layerBlock = SpawnLayerBlock(Random.Range(1, ResourceManager.PoolDictionary.Count));
+        layerBlock.OnChangeLayer();
     }
 
-    public void SpawnLayerBlock(int blockID)
+    public LayerBlock SpawnLayerBlock(int blockID)
     {
         LayerBlock layerBlock = (LayerBlock) ResourceManager.SpawnFromPool((PoolType) blockID,
             new Vector3(Constants.LAYER_WIDTH * LayerBlocks.Count, 0, 0),
@@ -52,6 +53,8 @@ public class LayerManager : MainBehaviour
 
         layerBlock.Init();
         LayerBlocks.Add(layerBlock);
+
+        return layerBlock;
     }
 
     public void OnChangeLayer()

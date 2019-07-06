@@ -84,12 +84,16 @@ public class ResourceManager : MainBehaviour
         return objectToSpawn;
     }
 
+
     public void DisablePool()
     {
         foreach (Transform obj in transform)
         {
-            obj.gameObject.SetActive(false);
+            Destroy(obj.gameObject);
         }
+
+        PoolDictionary = new Dictionary<PoolType, Queue<MonoBehaviour>>();
+        LoadResources();
     }
 
     private MonoBehaviour LoadPool(GameObject obj)
