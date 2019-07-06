@@ -7,6 +7,8 @@ public class GameManager : MainBehaviour
 {
     public Action OnGameOver;
     public Action OnStartGame;
+    public Action OnRestartGame;
+
     public bool IsPlaying { get; set; }
     public PlayerManager PlayerManager { get; set; }
     public int Score { get; set; }
@@ -22,6 +24,7 @@ public class GameManager : MainBehaviour
     {
         OnGameOver += GameOver;
         OnStartGame += StartGame;
+        OnRestartGame += RestartGame;
     }
 
     private void GameOver()
@@ -32,7 +35,8 @@ public class GameManager : MainBehaviour
     private IEnumerator GameOverRoutine()
     {
         IsPlaying = false;
-        FindObjectOfType<PlayerManager>().Animator.SetBool(Constants.PlayerRunAnimation, false);
+        CameraManager.IsTargeting = false;
+        //FindObjectOfType<PlayerManager>().Animator.SetBool(Constants.PlayerRunAnimation, false);
 
         yield return new WaitForSeconds(1f);
         ScreenManager.GetScreen<GameOverScreen>().gameObject.SetActive(true);
@@ -46,6 +50,12 @@ public class GameManager : MainBehaviour
         GameScreen = ScreenManager.GetScreen<GameScreen>();
 
         StartCoroutine(IncreasingScore());
+    }
+
+    private void RestartGame()
+    {
+        ScreenManager.GetScreen<GameOverScreen>().gameObject.SetActive(false);
+        Score = 0;
     }
 
     //Use for bonus increase of score
@@ -65,6 +75,7 @@ public class GameManager : MainBehaviour
             GameScreen.IncrementScore(Score);
         }
     }
+
 
     //TODO: Refactor for loadingManager
     public void LoadScene(int id)
