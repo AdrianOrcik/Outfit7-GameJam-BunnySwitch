@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Tile : Interactable
 {
+
     public int position_Y { get; set; }
     public int position_X { get; set; }
 

@@ -72,6 +72,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6803116661018820236}
+  - {fileID: 2852031027423539254}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -87,3 +88,59 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43dc205e214f0d14ca9b996b0661ca89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &8366164957465861001
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2852031027423539254}
+  - component: {fileID: 8500345508753643664}
+  m_Layer: 0
+  m_Name: ResourceManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2852031027423539254
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8366164957465861001}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6803116662850314648}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8500345508753643664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8366164957465861001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a604d059ce9584e74a675504c6609339, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GameBlocks:
+  - PoolType: 0
+    Amount: 5
+    Obj: {fileID: 2292668869217825436, guid: cf147f24c30fe4ae486dfcaa93b9162d, type: 3}
+  - PoolType: 1
+    Amount: 5
+    Obj: {fileID: 2292668869217825436, guid: 56bd60bbeb3b1427c85f541ae9c09d0e, type: 3}
+  - PoolType: 2
+    Amount: 5
+    Obj: {fileID: 8949919965982183031, guid: 6ad8fda19f3cfe641b029b44e9def6dc, type: 3}
+  - PoolType: 3
+    Amount: 5
+    Obj: {fileID: 8949919965982183031, guid: 1cc3a1f054f8a422ca3ef23b3545cf67, type: 3}

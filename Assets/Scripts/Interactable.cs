@@ -8,6 +8,7 @@ public class Interactable : MainBehaviour
     public SpriteRenderer SpriteRenderer;
     public BoxCollider2D BoxCollider2D;
     private YieldInstruction fadeInstruction = new YieldInstruction();
+    public Layer Layer { get; set; }
 
     public void SetTransparent(bool toActive)
     {
@@ -20,7 +21,9 @@ public class Interactable : MainBehaviour
         {
             if (SpriteRenderer != null)
             {
-                StartCoroutine(FadeIn());
+                //StartCoroutine(FadeIn());
+                SpriteRenderer.color = new Color(SpriteRenderer.color.r, SpriteRenderer.color.g, SpriteRenderer.color.b,
+                    1f);
                 SpriteRenderer.sortingOrder = Constants.ACTIVE_SORTING_LAYER;
             }
 
@@ -30,7 +33,9 @@ public class Interactable : MainBehaviour
         {
             if (SpriteRenderer != null)
             {
-                StartCoroutine(FadeOut());
+                //StartCoroutine(FadeOut());
+                SpriteRenderer.color = new Color(SpriteRenderer.color.r, SpriteRenderer.color.g, SpriteRenderer.color.b,
+                    0.2f);
                 SpriteRenderer.sortingOrder = Constants.DEACTIVE_SORTING_LAYER;
             }
 
