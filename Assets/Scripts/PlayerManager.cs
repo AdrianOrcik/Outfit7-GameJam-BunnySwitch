@@ -22,17 +22,48 @@ public class PlayerManager : MainBehaviour
         Vector3 finalBounceUp = new Vector3(0f, 2f, 0);
         float defaultYpos = transform.position.y;
 
-        Sequence mySequence = DOTween.Sequence();
-        mySequence.Append(transform.DOMoveY(defaultYpos + bounceUp.y, Constants.PLAYER_TRAMPOLINE_JUMP_UP_TIME)
-            .SetEase(Ease.OutExpo));
-        mySequence.Append(transform.DOMoveY(defaultYpos + finalBounceUp.y, Constants.PLAYER_TRAMPOLINE_JUMP_DOWN_TIME)
-            .SetEase(Ease.InExpo));
-        mySequence.AppendInterval(Constants.PLAYER_TRAMPOLINE_JUMP_UP_TIME + Constants.PLAYER_TRAMPOLINE_JUMP_DOWN_TIME)
-            .OnComplete(OnJumpCompleted);
+//        bool platform = false;
+//        int mask = (LayerMask.GetMask(Constants.TileLayer));
+//        RaycastHit2D hitPlatform =  Physics2D.Raycast(CharacterTransform.position, new Vector2(3,2), mask);//= Physics2D.Raycast(CharacterTransform.position, new Vector2(3,2));
+//        Debug.DrawRay(CharacterTransform.position, new Vector2(3,2));
+//        if (hitPlatform.collider != null && hitPlatform.transform.GetComponent<Obstacle>())
+//        {
+//            platform = true;
+//        }
+//        
+//        if (platform)
+//        {
+            Sequence mySequence = DOTween.Sequence();
+            mySequence.Append(transform.DOMoveY(defaultYpos + bounceUp.y, Constants.PLAYER_TRAMPOLINE_JUMP_UP_TIME)
+                .SetEase(Ease.OutExpo));
+            mySequence.Append(transform
+                .DOMoveY(defaultYpos + finalBounceUp.y, Constants.PLAYER_TRAMPOLINE_JUMP_DOWN_TIME)
+                .SetEase(Ease.InExpo));
+            mySequence.AppendInterval(Constants.PLAYER_TRAMPOLINE_JUMP_UP_TIME +
+                                      Constants.PLAYER_TRAMPOLINE_JUMP_DOWN_TIME)
+                .OnComplete(OnJumpCompleted);
 
-        Sequence animationSequence = DOTween.Sequence();
-        animationSequence.AppendInterval(Constants.PLAYER_TRAMPOLINE_JUMP_UP_TIME)
-            .OnComplete(EndJumpUpAnimation);
+            Sequence animationSequence = DOTween.Sequence();
+            animationSequence.AppendInterval(Constants.PLAYER_TRAMPOLINE_JUMP_UP_TIME)
+                .OnComplete(EndJumpUpAnimation);
+//        }
+//        else
+//        {
+//            Sequence mySequence = DOTween.Sequence();
+//            mySequence.Append(transform.DOMoveY(defaultYpos + bounceUp.y, Constants.PLAYER_TRAMPOLINE_JUMP_UP_TIME)
+//                .SetEase(Ease.OutExpo));
+//            mySequence.Append(transform
+//                .DOMoveY(defaultYpos + defaultYpos, Constants.PLAYER_TRAMPOLINE_JUMP_UP_TIME)
+//                .SetEase(Ease.InExpo));
+//            mySequence.AppendInterval(Constants.PLAYER_TRAMPOLINE_JUMP_UP_TIME +
+//                                      Constants.PLAYER_TRAMPOLINE_JUMP_DOWN_LONG)
+//                .OnComplete(OnJumpCompleted);
+//            
+//            Sequence animationSequence = DOTween.Sequence();
+//            animationSequence.AppendInterval(Constants.PLAYER_TRAMPOLINE_JUMP_UP_TIME + Constants.PLAYER_TRAMPOLINE_JUMP_DOWN_LONG)
+//                .OnComplete(EndJumpUpAnimation);
+//            
+//        }
 
         Animator.SetBool(Constants.PlayerJumpUp, true);
         IsJumping = true;
@@ -45,6 +76,7 @@ public class PlayerManager : MainBehaviour
 
     void EndJumpUpAnimation()
     {
+        IsJumping = false;
         Animator.SetBool(Constants.PlayerJumpUp, false);
     }
 
@@ -100,6 +132,7 @@ public class PlayerManager : MainBehaviour
     private float emptyTileDistance = 1.5f;
     private float jumpDownDistance = 1.5f;
     private int platformPosition = 0;
+    private float platformDistance = 3.0f;
 
     void Update()
     {
@@ -138,6 +171,7 @@ public class PlayerManager : MainBehaviour
             Tile tile = hitGround.collider.GetComponent<Tile>();
             CurrentTile = tile;
 
+            float distance = Vector3.Distance(tile.gameObject.transform.position, CharacterTransform.position);
             if (Vector3.Distance(tile.gameObject.transform.position, CharacterTransform.position) >
                 tileDistance)
             {
