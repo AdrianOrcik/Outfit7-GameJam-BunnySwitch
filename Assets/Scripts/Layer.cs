@@ -24,9 +24,19 @@ public class Layer : MainBehaviour
     {
         foreach (Interactable interactable in Interactables)
         {
-            interactable.SetTransparent(toActive);
+            Tile tile = interactable as Tile;
+            if (tile != null)
+            {
+                tile.SetTileSprite(toActive);
+                interactable.SetTransparent(toActive);
+            }
+            else
+            {
+                interactable.SetTransparent(toActive);
+            }
         }
     }
+
 
     private void OnDisable()
     {

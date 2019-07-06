@@ -35,7 +35,7 @@ public class Interactable : MainBehaviour
             {
                 //StartCoroutine(FadeOut());
                 SpriteRenderer.color = new Color(SpriteRenderer.color.r, SpriteRenderer.color.g, SpriteRenderer.color.b,
-                    0.2f);
+                    0.7f);
                 SpriteRenderer.sortingOrder = Constants.DEACTIVE_SORTING_LAYER;
             }
 

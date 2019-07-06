@@ -33,7 +33,7 @@ public class GameOverScreen : ScreenBehaviour
         while (temp_value < value)
         {
             temp_value += 1;
-            yield return new WaitForSeconds(0.0025f);
+            yield return new WaitForSeconds(0.0001f);
             text.text = temp_value.ToString();
         }
     }

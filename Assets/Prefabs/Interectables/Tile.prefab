@@ -48,6 +48,8 @@ MonoBehaviour:
   ObstacleType: 0
   SpriteRenderer: {fileID: 243163969666069031}
   BoxCollider2D: {fileID: 4375439320113457653}
+  ActiveTile: {fileID: 21300000, guid: bf64c779fd66849a5b6f1ed85467527b, type: 3}
+  DeactiveTile: {fileID: 21300000, guid: 8ef3309742a334f25bfbf19f73c99d79, type: 3}
 --- !u!61 &4375439320113457653
 BoxCollider2D:
   m_ObjectHideFlags: 0
