@@ -21,7 +21,7 @@ public class LayerManager : MainBehaviour
             }
             else
             {
-                SpawnLayerBlock(2);
+                SpawnLayerBlock(Random.Range(1, LayerBlocksGO.Length));
             }
         }
 

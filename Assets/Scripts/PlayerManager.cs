@@ -32,7 +32,7 @@ public class PlayerManager : MainBehaviour
         
         Sequence animationSequence = DOTween.Sequence();
         animationSequence.AppendInterval(Constants.PLAYER_TRAMPOLINE_JUMP_UP_TIME)
-            .OnComplete(EndJumpAnimation);
+            .OnComplete(EndJumpUpAnimation);
             
         Animator.SetBool(Constants.PlayerJumpUp, true);
         IsJumping = true;
@@ -43,19 +43,34 @@ public class PlayerManager : MainBehaviour
         IsJumping = false;
     }
 
-    void EndJumpAnimation()
+    void EndJumpUpAnimation()
     {
         Animator.SetBool(Constants.PlayerJumpUp, false);
     }
+    void EndJumpDownAnimation()
+    {
+        Animator.SetBool(Constants.PlayerJumpDown, false);
+    }
 
-    public void JumpDown()
+    public void JumpDown(float distance)
     {
         if (CurrentTile != null && !IsJumping)
         {
+            
+           
+            if (distance > jumpDownDistance && CurrentTile.transform.position.y >= platformPosition)
+            {
+                Animator.SetBool(Constants.PlayerJumpDown, true);
+                Sequence animationSequence = DOTween.Sequence();
+                animationSequence.AppendInterval(0.2f)
+                    .OnComplete(EndJumpDownAnimation);
+            }
+           
             Sequence mySequence = DOTween.Sequence();
             mySequence.Append(transform
                 .DOMoveY(CurrentTile.position_Y, Constants.PLAYER_TRAMPOLINE_JUMP_DOWN_TIME)
                 .SetEase(Ease.OutExpo));
+            
         }
     }
 
@@ -68,8 +83,10 @@ public class PlayerManager : MainBehaviour
     }
 
     private float interectableDistance = 0.5f;
-    private float tileDistance = 1f;
-    private float EmptyTileDistance = 1.5f;
+    private float tileDistance = 1.5f;
+    private float emptyTileDistance = 1.5f;
+    private float jumpDownDistance = 1.5f;
+    private int platformPosition = 0;
 
     void Update()
     {
@@ -90,7 +107,6 @@ public class PlayerManager : MainBehaviour
                         JumpUp();
                         break;
                     case ObstacleType.kill:
-                        Debug.Log("Kill");
                         MainModel.GameManager.IsPlaying = false;
                         Animator.SetBool(Constants.PlayerDieObstacleAnimation, true);
                         break;
@@ -107,10 +123,11 @@ public class PlayerManager : MainBehaviour
         {
             Tile tile = hitGround.collider.GetComponent<Tile>();
             CurrentTile = tile;
+
             if (Vector3.Distance(tile.gameObject.transform.position, CharacterTransform.position) >
                 tileDistance)
             {
-                JumpDown();
+                JumpDown(Vector3.Distance(tile.gameObject.transform.position, CharacterTransform.position));
             }
         }
         
@@ -118,11 +135,9 @@ public class PlayerManager : MainBehaviour
         Debug.DrawRay(CharacterTransform.position, Vector2.down, Color.red);
         if (hitEmpty.collider != null && hitEmpty.collider.GetComponent<EmptyTile>())
         {
-            //Debug.Log("fall test");
             EmptyTile tile = hitEmpty.collider.GetComponent<EmptyTile>();
-            //Debug.Log(Vector3.Distance(tile.gameObject.transform.position, CharacterTransform.position));
             if (Vector3.Distance(tile.gameObject.transform.position, CharacterTransform.position) <
-                EmptyTileDistance)
+                emptyTileDistance)
             {
                 Animator.SetBool(Constants.PlayerDieFallAnimation, true);
                Debug.Log("fall");
