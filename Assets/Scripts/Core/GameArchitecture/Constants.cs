@@ -33,6 +33,8 @@ public static class Constants
     public static string PlayerJumpUp = "JumpUp";
     public static string PlayerJumpDown = "JumpDown";
 
+    public static string BEST_SCORE_KEY = "Best_Score";
+
     public static float GET_READY_TIME = 0.4f;
     public static float FADE_OUT_READY_SCREEN_TIME = 1.7f;
 

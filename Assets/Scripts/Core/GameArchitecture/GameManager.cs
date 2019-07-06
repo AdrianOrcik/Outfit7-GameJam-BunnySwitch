@@ -13,6 +13,7 @@ public class GameManager : MainBehaviour
     public bool IsPlaying { get; set; }
     public PlayerManager PlayerManager { get; set; }
     public int Score { get; set; }
+    public int BestScore { get; set; }
     private GameScreen GameScreen;
 
     public bool InitScreenSeen { get; set; }
@@ -44,11 +45,25 @@ public class GameManager : MainBehaviour
 
     private IEnumerator GameOverRoutine()
     {
-        Debug.Log("GameOver");
         IsPlaying = false;
         CameraManager.IsTargeting = false;
 
-        //FindObjectOfType<PlayerManager>().Animator.SetBool(Constants.PlayerRunAnimation, false);
+        //BestScore
+        if (PlayerPrefs.HasKey(Constants.BEST_SCORE_KEY))
+        {
+            BestScore = PlayerPrefs.GetInt(Constants.BEST_SCORE_KEY);
+
+            if (Score > BestScore)
+            {
+                BestScore = Score;
+                PlayerPrefs.SetInt(Constants.BEST_SCORE_KEY, BestScore);
+            }
+        }
+        else
+        {
+            PlayerPrefs.SetInt(Constants.BEST_SCORE_KEY, Score);
+            BestScore = PlayerPrefs.GetInt(Constants.BEST_SCORE_KEY);
+        }
 
         yield return new WaitForSeconds(1f);
         ScreenManager.GetScreen<GameOverScreen>().gameObject.SetActive(true);
@@ -86,8 +101,8 @@ public class GameManager : MainBehaviour
     {
         while (true)
         {
-            Score += 10;
-            yield return new WaitForSeconds(0.5f);
+            Score += 5;
+            yield return new WaitForSeconds(0.25f);
             GameScreen.IncrementScore(Score);
 
             if (IsGameOver) break;
