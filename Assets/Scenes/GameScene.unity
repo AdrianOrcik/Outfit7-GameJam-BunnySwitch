@@ -792,10 +792,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LayerBlocksGO:
-  - {fileID: 7749075822745681485, guid: cf147f24c30fe4ae486dfcaa93b9162d, type: 3}
-  - {fileID: 7749075822745681485, guid: 56bd60bbeb3b1427c85f541ae9c09d0e, type: 3}
-  - {fileID: 607860181737046694, guid: 6ad8fda19f3cfe641b029b44e9def6dc, type: 3}
-  - {fileID: 607860181737046694, guid: 1cc3a1f054f8a422ca3ef23b3545cf67, type: 3}
+  - {fileID: 607860181737046694, guid: 8111d9499abc83d45887465aa32f682e, type: 3}
 --- !u!1 &2077698893
 GameObject:
   m_ObjectHideFlags: 0
