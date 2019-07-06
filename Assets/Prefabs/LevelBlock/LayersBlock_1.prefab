@@ -219,6 +219,12 @@ PrefabInstance:
       propertyPath: ObstacleType
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 8696779716926706411, guid: bff136bc421314b9b925529bec92f3d7,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 3ec86133517fe5947a1e8455ef81031f,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bff136bc421314b9b925529bec92f3d7, type: 3}
 --- !u!4 &7145879006081560682 stripped
@@ -1374,6 +1380,12 @@ PrefabInstance:
       propertyPath: ObstacleType
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 8696779716926706411, guid: 3474840c458c4a74db7b993e4131412c,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 3ec86133517fe5947a1e8455ef81031f,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3474840c458c4a74db7b993e4131412c, type: 3}
 --- !u!4 &1487228770462394846 stripped

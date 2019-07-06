@@ -2,16 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="54013c25-a907-41fa-bd1b-07f6549f07ac" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/LevelBlock/LayersBlock_2.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/LevelBlock/LayersBlock_2.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/LayerManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/LayerManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/AnimationSprites/Rabbit/DieFall/DieFall.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/AnimationSprites/Rabbit/DieFall/DieFall.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/AnimationSprites/Rabbit/DieObstacle/DieObstacle.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/AnimationSprites/Rabbit/DieObstacle/DieObstacle.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/AnimationSprites/Rabbit/Idle/Idle.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/AnimationSprites/Rabbit/Idle/Idle.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/AnimationSprites/Rabbit/JumpUp/JumpUp.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/AnimationSprites/Rabbit/JumpUp/JumpUp.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/AnimationSprites/Rabbit/RabbitController.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/AnimationSprites/Rabbit/RabbitController.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/AnimationSprites/Rabbit/Run/RunAnimation.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/AnimationSprites/Rabbit/Run/RunAnimation.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/UnityConnectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/UnityConnectSettings.asset" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -71,8 +62,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/LayerManager.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="23" column="71" lean-forward="true" selection-start-line="23" selection-start-column="71" selection-end-line="23" selection-end-column="71" />
+            <state relative-caret-position="75">
+              <caret line="16" column="9" lean-forward="true" selection-start-line="16" selection-start-column="9" selection-end-line="16" selection-end-column="9" />
               <folding>
                 <marker date="1562409089920" expanded="false" signature="6:116" ph="..." />
                 <marker date="1562409089920" expanded="true" signature="159:1428" ph="{...}" />
@@ -378,7 +369,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="48883000" />
+    <option name="totallyTimeSpent" value="49520000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -856,8 +847,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/LayerManager.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="23" column="71" lean-forward="true" selection-start-line="23" selection-start-column="71" selection-end-line="23" selection-end-column="71" />
+        <state relative-caret-position="75">
+          <caret line="16" column="9" lean-forward="true" selection-start-line="16" selection-start-column="9" selection-end-line="16" selection-end-column="9" />
           <folding>
             <marker date="1562409089920" expanded="false" signature="6:116" ph="..." />
             <marker date="1562409089920" expanded="true" signature="159:1428" ph="{...}" />
