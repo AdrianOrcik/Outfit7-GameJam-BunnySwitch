@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
 
-//TODO: FallDown behaviour -> EmptyTile
-//TODO: Kill behaviour
 public class PlayerManager : MainBehaviour
 {
     public float playerSpeed = 5;
@@ -32,6 +30,11 @@ public class PlayerManager : MainBehaviour
         mySequence.AppendInterval(Constants.PLAYER_TRAMPOLINE_JUMP_UP_TIME + Constants.PLAYER_TRAMPOLINE_JUMP_DOWN_TIME)
             .OnComplete(OnJumpCompleted);
 
+        Sequence animationSequence = DOTween.Sequence();
+        animationSequence.AppendInterval(Constants.PLAYER_TRAMPOLINE_JUMP_UP_TIME)
+            .OnComplete(EndJumpUpAnimation);
+
+        Animator.SetBool(Constants.PlayerJumpUp, true);
         IsJumping = true;
     }
 
@@ -40,10 +43,28 @@ public class PlayerManager : MainBehaviour
         IsJumping = false;
     }
 
-    public void JumpDown()
+    void EndJumpUpAnimation()
+    {
+        Animator.SetBool(Constants.PlayerJumpUp, false);
+    }
+
+    void EndJumpDownAnimation()
+    {
+        Animator.SetBool(Constants.PlayerJumpDown, false);
+    }
+
+    public void JumpDown(float distance)
     {
         if (CurrentTile != null && !IsJumping)
         {
+            if (distance > jumpDownDistance && CurrentTile.transform.position.y >= platformPosition)
+            {
+                Animator.SetBool(Constants.PlayerJumpDown, true);
+                Sequence animationSequence = DOTween.Sequence();
+                animationSequence.AppendInterval(0.2f)
+                    .OnComplete(EndJumpDownAnimation);
+            }
+
             Sequence mySequence = DOTween.Sequence();
             mySequence.Append(transform
                 .DOMoveY(CurrentTile.position_Y, Constants.PLAYER_TRAMPOLINE_JUMP_DOWN_TIME)
@@ -74,8 +95,12 @@ public class PlayerManager : MainBehaviour
     }
 
     private float interectableDistance = 0.5f;
-    private float tileDistance = 1f;
     private float EmptyTileDistance = 1.2f;
+    private float tileDistance = 1.5f;
+    private float emptyTileDistance = 1.5f;
+    private float jumpDownDistance = 1.5f;
+    private int platformPosition = 0;
+
 
     void Update()
     {
@@ -97,6 +122,7 @@ public class PlayerManager : MainBehaviour
                         JumpUp();
                         break;
                     case ObstacleType.kill:
+
                         MainModel.GameManager.OnGameOver?.Invoke();
                         Animator.SetBool(Constants.PlayerDieObstacleAnimation, true);
                         break;
@@ -113,10 +139,11 @@ public class PlayerManager : MainBehaviour
         {
             Tile tile = hitGround.collider.GetComponent<Tile>();
             CurrentTile = tile;
+
             if (Vector3.Distance(tile.gameObject.transform.position, CharacterTransform.position) >
                 tileDistance)
             {
-                JumpDown();
+                JumpDown(Vector3.Distance(tile.gameObject.transform.position, CharacterTransform.position));
             }
         }
 
@@ -126,9 +153,8 @@ public class PlayerManager : MainBehaviour
         {
             EmptyTile tile = hitEmpty.collider.GetComponent<EmptyTile>();
             if (Vector3.Distance(tile.gameObject.transform.position, CharacterTransform.position) <
-                EmptyTileDistance)
+                emptyTileDistance)
             {
-             
                 MainModel.GameManager.OnGameOver?.Invoke();
                 StartCoroutine(FallDown());
                 Animator.SetBool(Constants.PlayerDieFallAnimation, true);
