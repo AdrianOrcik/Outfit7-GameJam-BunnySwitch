@@ -44,6 +44,9 @@ public class ResourceManager : MainBehaviour
         LoadPoolers(PoolType.Layerblock1);
         LoadPoolers(PoolType.Layerblock2);
         LoadPoolers(PoolType.Layerblock3);
+        LoadPoolers(PoolType.Layerblock4);
+        LoadPoolers(PoolType.Layerblock5);
+        LoadPoolers(PoolType.Layerblock6);
     }
 
     /// <summary>
