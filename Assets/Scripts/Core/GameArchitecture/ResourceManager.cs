@@ -75,12 +75,21 @@ public class ResourceManager : MainBehaviour
 
         MonoBehaviour objectToSpawn = PoolDictionary[poolType].Dequeue();
         objectToSpawn.gameObject.SetActive(true);
+        objectToSpawn.transform.position = new Vector3(0, 0, 0);
         objectToSpawn.transform.position = position;
         objectToSpawn.transform.rotation = rotation;
 
         PoolDictionary[poolType].Enqueue(objectToSpawn);
 
         return objectToSpawn;
+    }
+
+    public void DisablePool()
+    {
+        foreach (Transform obj in transform)
+        {
+            obj.gameObject.SetActive(false);
+        }
     }
 
     private MonoBehaviour LoadPool(GameObject obj)

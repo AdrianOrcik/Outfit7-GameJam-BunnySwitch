@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -52,6 +53,7 @@ public class GameManager : MainBehaviour
         yield return new WaitForSeconds(1f);
         ScreenManager.GetScreen<GameOverScreen>().gameObject.SetActive(true);
         ScreenManager.GetScreen<GameScreen>().gameObject.SetActive(false);
+        MainModel.ResourceManager.DisablePool();
     }
 
     private void StartGame()
@@ -67,6 +69,7 @@ public class GameManager : MainBehaviour
     private void RestartGame()
     {
         IsGameOver = false;
+        LayerManager.LayerBlocks = new List<LayerBlock>();
         ScreenManager.GetScreen<GameOverScreen>().gameObject.SetActive(false);
         Score = 0;
     }

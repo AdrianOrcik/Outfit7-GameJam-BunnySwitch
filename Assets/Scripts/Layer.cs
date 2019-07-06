@@ -28,6 +28,11 @@ public class Layer : MainBehaviour
         }
     }
 
+    private void OnDisable()
+    {
+        transform.position = new Vector3(0, 0, 0);
+    }
+
 //    public int GetYposition(Transform transform)
 //    {
 //        List<int> tilePositions

@@ -8,9 +8,18 @@ public class LayerManager : MainBehaviour
 {
     public List<LayerBlock> LayerBlocks { get; set; }
 
-    private void Start()
+    private void OnEnable()
     {
         InputManager.instance.OnSwipe += OnChangeLayer;
+    }
+
+    private void OnDisable()
+    {
+        if (InputManager.instance.OnSwipe != null) InputManager.instance.OnSwipe -= OnChangeLayer;
+    }
+
+    private void Start()
+    {
         LayerBlocks = new List<LayerBlock>();
         for (int i = 0; i < 3; i++)
         {

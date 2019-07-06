@@ -138,7 +138,7 @@ public class PlayerManager : MainBehaviour
         {
             Tile tile = hitGround.collider.GetComponent<Tile>();
 
-            //IsDifferentLayerBlock(CurrentTile, tile);
+            IsDifferentLayerBlock(CurrentTile, tile);
             CurrentTile = tile;
 
             if (Vector3.Distance(tile.gameObject.transform.position, CharacterTransform.position) >
@@ -165,9 +165,12 @@ public class PlayerManager : MainBehaviour
 
     private void IsDifferentLayerBlock(Tile currentTile, Tile nextTile)
     {
-        if (currentTile.Layer.LayerBlock != nextTile.Layer.LayerBlock)
+        if (currentTile != null && nextTile != null)
         {
-            LayerManager.SpawnNextBlock();
+            if (currentTile.Layer.LayerBlock != nextTile.Layer.LayerBlock)
+            {
+                LayerManager.SpawnNextBlock();
+            }
         }
     }
 }

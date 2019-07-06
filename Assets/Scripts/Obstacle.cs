@@ -5,9 +5,15 @@ using UnityEngine;
 
 public class Obstacle : Interactable
 {
-    private void Start()
+    private void OnEnable()
     {
         InputManager.instance.OnSwipe += OnObstacleBounce;
+    }
+
+    private void OnDisable()
+    {
+        // ReSharper disable once DelegateSubtraction
+        if (InputManager.instance.OnSwipe != null) InputManager.instance.OnSwipe -= OnObstacleBounce;
     }
 
     public void OnObstacleBounce()
