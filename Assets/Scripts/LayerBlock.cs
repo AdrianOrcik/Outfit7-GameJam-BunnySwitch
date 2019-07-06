@@ -12,7 +12,9 @@ public class LayerBlock : MainBehaviour
         Layers = new List<Layer>();
         foreach (Transform layer in transform)
         {
-            Layers.Add(layer.GetComponent<Layer>());
+            Layer layerScript = layer.GetComponent<Layer>();
+            layerScript.LayerBlock = this;
+            Layers.Add(layerScript);
         }
     }
 

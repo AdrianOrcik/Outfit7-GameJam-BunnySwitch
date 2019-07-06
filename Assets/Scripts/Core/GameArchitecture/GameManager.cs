@@ -14,7 +14,7 @@ public class GameManager : MainBehaviour
     public int Score { get; set; }
     private GameScreen GameScreen;
 
-    public bool InitScreenSeen = false;
+    public bool InitScreenSeen { get; set; }
     private bool IsGameOver = false;
 
     private void Awake()
@@ -28,6 +28,8 @@ public class GameManager : MainBehaviour
         OnGameOver += GameOver;
         OnStartGame += StartGame;
         OnRestartGame += RestartGame;
+
+        ResourceManager.LoadResources();
     }
 
     private void GameOver()

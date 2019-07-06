@@ -36,6 +36,7 @@
               <e p="InputMouse.cs" t="Include" />
               <e p="MainBehaviour.cs" t="Include" />
               <e p="MainModel.cs" t="Include" />
+              <e p="ResourceManager.cs" t="Include" />
             </e>
             <e p="ScreenArchitecture" t="Include">
               <e p="CreditsScreen.cs" t="Include" />

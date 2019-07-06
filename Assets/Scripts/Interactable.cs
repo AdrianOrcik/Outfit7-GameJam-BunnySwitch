@@ -8,7 +8,8 @@ public class Interactable : MainBehaviour
     public SpriteRenderer SpriteRenderer;
     public BoxCollider2D BoxCollider2D;
     private YieldInstruction fadeInstruction = new YieldInstruction();
-
+    public Layer Layer { get; set; }
+    
     public void SetTransparent(bool toActive)
     {
 //        if (BoxCollider2D == null)

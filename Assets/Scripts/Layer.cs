@@ -7,13 +7,16 @@ using DG.Tweening;
 public class Layer : MainBehaviour
 {
     public bool IsActive { get; set; }
+    public LayerBlock LayerBlock { get; set; }
     public List<Interactable> Interactables = new List<Interactable>();
 
     void Start()
     {
         foreach (Transform tile in transform)
         {
-            Interactables.Add(tile.GetComponent<Interactable>());
+            Interactable interactable = tile.GetComponent<Interactable>();
+            interactable.Layer = this;
+            Interactables.Add(interactable);
         }
     }
 

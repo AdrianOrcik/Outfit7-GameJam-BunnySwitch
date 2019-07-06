@@ -4,6 +4,7 @@ public static class MainModel
 {
     public static List<MainBehaviour> CommonBehaviours = new List<MainBehaviour>();
     public static GameManager GameManager;
+    public static ResourceManager ResourceManager;
 
     public static T GetAssignedClass<T>() where T : MainBehaviour
     {

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
+using UnityEditor.U2D;
 using UnityEngine;
 
 public class PlayerManager : MainBehaviour
@@ -10,7 +11,7 @@ public class PlayerManager : MainBehaviour
 
     public Animator Animator;
     public Transform CharacterTransform;
-    public Tile CurrentTile;
+    public Tile CurrentTile { get; set; }
 
     private void Start()
     {
@@ -136,6 +137,8 @@ public class PlayerManager : MainBehaviour
         if (hitGround.collider != null && hitGround.collider.GetComponent<Tile>())
         {
             Tile tile = hitGround.collider.GetComponent<Tile>();
+
+            //IsDifferentLayerBlock(CurrentTile, tile);
             CurrentTile = tile;
 
             if (Vector3.Distance(tile.gameObject.transform.position, CharacterTransform.position) >
@@ -157,6 +160,14 @@ public class PlayerManager : MainBehaviour
                 StartCoroutine(FallDown());
                 Animator.SetBool(Constants.PlayerDieFallAnimation, true);
             }
+        }
+    }
+
+    private void IsDifferentLayerBlock(Tile currentTile, Tile nextTile)
+    {
+        if (currentTile.Layer.LayerBlock != nextTile.Layer.LayerBlock)
+        {
+            LayerManager.SpawnNextBlock();
         }
     }
 }
