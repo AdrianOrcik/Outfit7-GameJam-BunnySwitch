@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class PlayerManager : MainBehaviour
 {
-    public float PlayerSpeed { get; set; }
+    public float playerSpeed = 5;
     public bool IsJumping;
 
     public Animator Animator;
@@ -14,18 +14,6 @@ public class PlayerManager : MainBehaviour
 
     private void Start()
     {
-        PlayerSpeed = 3;
-        StartCoroutine(IncreaseSpeed());
-    }
-
-    private IEnumerator IncreaseSpeed()
-    {
-        yield return new WaitForSeconds(10f);
-        if (PlayerSpeed < 5)
-        {
-            Debug.Log("SpeedUP");
-            PlayerSpeed += 0.2f;
-        }
     }
 
     public void JumpUp()
@@ -134,7 +122,7 @@ public class PlayerManager : MainBehaviour
     {
         if (MainModel.GameManager.IsPlaying)
         {
-            transform.Translate(Vector3.right * Time.deltaTime * PlayerSpeed);
+            transform.Translate(Vector3.right * Time.deltaTime * playerSpeed);
         }
     }
 
