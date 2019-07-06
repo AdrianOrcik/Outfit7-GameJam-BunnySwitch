@@ -32,7 +32,7 @@ public class GameOverScreen : ScreenBehaviour
         int temp_value = 0;
         while (temp_value < value)
         {
-            temp_value += 1;
+            temp_value += 50;
             yield return new WaitForSeconds(0.0001f);
             text.text = temp_value.ToString();
         }

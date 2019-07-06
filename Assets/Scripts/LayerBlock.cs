@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices.WindowsRuntime;
 using UnityEngine;
 using DG.Tweening;
 
@@ -37,6 +38,20 @@ public class LayerBlock : MainBehaviour
         {
             SwapLayer(Layers[1], Layers[0]);
         }
+    }
+
+    public Layer GetDeactivedLayer()
+    {
+        foreach (Layer layer in Layers)
+        {
+            if (!layer.IsActive)
+            {
+                return layer;
+            }
+        }
+
+        Debug.LogError("LAYER IS NULL");
+        return null;
     }
 
     public void SwapLayer(Layer toDeactive, Layer toActive, bool isInit = false)

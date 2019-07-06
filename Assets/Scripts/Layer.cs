@@ -37,6 +37,30 @@ public class Layer : MainBehaviour
         }
     }
 
+    public void SetPrediction(Vector2 position)
+    {
+        foreach (Interactable interectable in Interactables)
+        {
+            if (interectable.SpriteRenderer != null)
+            {
+                interectable.SpriteRenderer.color = new Color(interectable.SpriteRenderer.color.r,
+                    interectable.SpriteRenderer.color.g, interectable.SpriteRenderer.color.b, 0.5f);
+            }
+        }
+
+        foreach (Interactable interectable in Interactables)
+        {
+            Tile tile = interectable as Tile;
+            if (tile != null)
+            {
+                if (Math.Abs(tile.position_X - position.x) < 0.4f && Math.Abs(tile.position_Y - position.y) < 0.4f)
+                {
+                    tile.SpriteRenderer.color = new Color(interectable.SpriteRenderer.color.r,
+                        interectable.SpriteRenderer.color.g, interectable.SpriteRenderer.color.b, 1f);
+                }
+            }
+        }
+    }
 
     private void OnDisable()
     {

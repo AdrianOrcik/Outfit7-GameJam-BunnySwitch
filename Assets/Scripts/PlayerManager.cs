@@ -137,6 +137,10 @@ public class PlayerManager : MainBehaviour
     void Update()
     {
         MoveRight();
+        if (CurrentTile != null)
+        {
+            TargetTile(CurrentTile);
+        }
 
         RaycastHit2D hitInterectables = Physics2D.Raycast(CharacterTransform.position, Vector2.right);
         Debug.DrawRay(CharacterTransform.position, Vector2.right, Color.red);
@@ -175,8 +179,17 @@ public class PlayerManager : MainBehaviour
         {
             Tile tile = hitGround.collider.GetComponent<Tile>();
 
+
             IsDifferentLayerBlock(CurrentTile, tile);
+
+            if (CurrentTile != null)
+            {
+                CurrentTile.SpriteRenderer.color = new Color(CurrentTile.SpriteRenderer.color.r,
+                    CurrentTile.SpriteRenderer.color.g, CurrentTile.SpriteRenderer.color.b, 1f);
+            }
+
             CurrentTile = tile;
+
 
             float distance = Vector3.Distance(tile.gameObject.transform.position, CharacterTransform.position);
             if (Vector3.Distance(tile.gameObject.transform.position, CharacterTransform.position) >
@@ -210,5 +223,11 @@ public class PlayerManager : MainBehaviour
                 LayerManager.SpawnNextBlock();
             }
         }
+    }
+
+    private void TargetTile(Tile currentTile)
+    {
+        Layer layer = currentTile.Layer.LayerBlock.GetDeactivedLayer();
+        layer.SetPrediction(transform.position);
     }
 }

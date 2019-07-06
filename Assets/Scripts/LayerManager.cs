@@ -34,7 +34,7 @@ public class LayerManager : MainBehaviour
         }
 
 #if !UNITY_EDITOR && ( UNITY_ANDROID || UNITY_IOS )
-         // MainModel.GameManager.OnStartGame += OnChangeLayer;
+// MainModel.GameManager.OnStartGame += OnChangeLayer;
 #endif
         MainModel.GameManager.OnStartGame += OnChangeLayer;
     }
@@ -63,5 +63,10 @@ public class LayerManager : MainBehaviour
         {
             layerBlock.OnChangeLayer();
         }
+    }
+
+    public void TargetLayer(Vector2 position)
+    {
+        
     }
 }
