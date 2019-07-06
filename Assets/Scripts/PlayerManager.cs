@@ -18,7 +18,7 @@ public class PlayerManager : MainBehaviour
 
     public void JumpUp()
     {
-        Vector3 bounceUp = new Vector3(0f, 3f, 0);
+        Vector3 bounceUp = new Vector3(0f, 2.8f, 0);
         Vector3 finalBounceUp = new Vector3(0f, 2f, 0);
         float defaultYpos = transform.position.y;
 
@@ -146,7 +146,6 @@ public class PlayerManager : MainBehaviour
             if (Vector3.Distance(interactable.gameObject.transform.position, CharacterTransform.position) <
                 interectableDistance)
             {
-                Debug.Log("Interactable");
                 switch (interactable.ObstacleType)
                 {
                     case ObstacleType.trampoline:
